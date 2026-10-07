@@ -1,42 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PRÉPA EXCELLENTIA WANTANSHI — NATHAN</title>
 
 <style>
 :root{
   --navy:#0b1736;
   --blue:#2563eb;
-  --blue2:#38bdf8;
+  --sky:#38bdf8;
   --green:#10b981;
-  --green-dark:#047857;
   --violet:#7c3aed;
   --black:#080d18;
-  --white:#ffffff;
+  --white:#fff;
   --bg:#f4f7fb;
   --muted:#64748b;
   --border:#e2e8f0;
   --danger:#dc2626;
-  --gold:#f59e0b;
-  --shadow:0 15px 45px rgba(11,23,54,.10);
 }
 
 *{
   box-sizing:border-box;
-  margin:0;
-  padding:0;
 }
 
 body{
-  font-family:Inter,Arial,Helvetica,sans-serif;
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
   background:var(--bg);
   color:var(--black);
-  min-height:100vh;
 }
 
-button,input{
+button,
+input{
   font:inherit;
 }
 
@@ -50,751 +46,533 @@ button{
 
 /* ================= HEADER ================= */
 
-.topbar{
-  background:linear-gradient(135deg,var(--navy),#111d49);
-  color:white;
-  padding:18px 25px;
+.top{
+  background:linear-gradient(135deg,var(--navy),#17275b);
+  color:#fff;
+  padding:15px 20px;
   position:sticky;
   top:0;
-  z-index:50;
-  box-shadow:0 5px 25px rgba(0,0,0,.15);
+  z-index:10;
 }
 
-.topbar-inner{
-  max-width:1150px;
+.topin{
+  max-width:1050px;
   margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:20px;
+  align-items:center;
+  gap:15px;
 }
 
 .brand{
   display:flex;
+  gap:11px;
   align-items:center;
-  gap:12px;
 }
 
 .logo{
-  width:46px;
-  height:46px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  font-size:20px;
+  width:44px;
+  height:44px;
+  border-radius:12px;
   background:linear-gradient(135deg,var(--blue),var(--violet));
-  box-shadow:0 8px 20px rgba(37,99,235,.3);
+  display:grid;
+  place-items:center;
+  font-weight:900;
 }
 
-.brand h1{
-  font-size:16px;
-  letter-spacing:.5px;
-}
-
-.brand span{
+.brand b{
   display:block;
-  font-size:11px;
+  font-size:14px;
+}
+
+.brand small{
   color:#cbd5e1;
-  margin-top:3px;
-}
-
-.header-info{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-
-.badge{
-  padding:8px 13px;
-  border-radius:999px;
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,255,255,.13);
-  font-size:12px;
 }
 
 .timer{
-  min-width:100px;
-  text-align:center;
   background:#000;
-  border:1px solid rgba(255,255,255,.15);
   padding:9px 13px;
   border-radius:10px;
-  font-weight:800;
-  color:#fff;
+  font-weight:900;
+}
+
+/* ================= GENERAL ================= */
+
+.page{
+  max-width:1050px;
+  margin:auto;
+  padding:30px 18px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 15px 45px rgba(11,23,54,.1);
 }
 
 /* ================= HOME ================= */
 
-.page{
-  max-width:1150px;
-  margin:0 auto;
-  padding:45px 20px;
+.home{
+  min-height:calc(100vh - 75px);
+  display:grid;
+  place-items:center;
 }
 
-.hero{
-  min-height:calc(100vh - 100px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.home-card{
+.homecard{
+  padding:42px;
+  max-width:820px;
   width:100%;
-  max-width:850px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:50px;
-  box-shadow:var(--shadow);
-  position:relative;
-  overflow:hidden;
 }
 
-.home-card:before{
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  background:rgba(37,99,235,.07);
-  top:-130px;
-  right:-100px;
-}
-
-.home-card:after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  background:rgba(124,58,237,.06);
-  bottom:-120px;
-  left:-100px;
-}
-
-.home-content{
-  position:relative;
-  z-index:2;
-}
-
-.main-title{
-  font-size:clamp(30px,6vw,60px);
+h1{
+  font-size:clamp(32px,6vw,58px);
   line-height:1;
-  font-weight:950;
   color:var(--navy);
+  margin:0;
 }
 
-.main-title strong{
+.blue{
   color:var(--blue);
 }
 
-.subtitle{
-  margin-top:15px;
+.sub{
   color:var(--muted);
-  font-size:16px;
-  line-height:1.6;
-}
-
-.nathan{
-  display:inline-block;
-  margin-top:15px;
-  color:var(--violet);
-  font-weight:900;
-  letter-spacing:3px;
+  line-height:1.7;
 }
 
 .rules{
-  margin:30px 0;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:25px 0;
 }
 
 .rule{
-  padding:15px;
+  padding:14px;
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:12px;
   background:#fafcff;
   font-size:14px;
 }
 
-.rule b{
-  color:var(--navy);
-}
-
-.input-label{
-  display:block;
-  font-weight:800;
-  margin-bottom:8px;
-}
-
-.name-input{
+.input{
   width:100%;
-  padding:16px;
+  padding:15px;
   border:2px solid var(--border);
-  border-radius:13px;
-  outline:none;
-  transition:.2s;
+  border-radius:12px;
+  outline:0;
+  margin-top:8px;
 }
 
-.name-input:focus{
+.input:focus{
   border-color:var(--blue);
-  box-shadow:0 0 0 4px rgba(37,99,235,.10);
 }
 
-.primary-btn{
+.primary{
   width:100%;
-  margin-top:16px;
-  padding:16px;
+  margin-top:13px;
+  padding:15px;
   border:0;
-  border-radius:13px;
-  color:white;
+  border-radius:12px;
+  color:#fff;
   font-weight:900;
   background:linear-gradient(135deg,var(--blue),var(--violet));
-  transition:.2s;
-  box-shadow:0 10px 25px rgba(37,99,235,.22);
 }
 
-.primary-btn:hover{
-  transform:translateY(-2px);
-}
-
-.subjects{
+.chips{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  margin-top:20px;
+  gap:7px;
+  margin-top:15px;
 }
 
-.subject{
-  padding:7px 11px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:800;
+.chip{
+  padding:7px 10px;
+  border-radius:99px;
   background:#eef2ff;
   color:var(--violet);
+  font-size:11px;
+  font-weight:900;
 }
 
 /* ================= TEST ================= */
 
-.test-container{
-  max-width:950px;
+.test,
+.reading,
+.results{
+  max-width:900px;
   margin:auto;
-  padding:28px 18px 70px;
+  padding:25px 18px 60px;
 }
 
-.progress-wrap{
-  background:white;
-  padding:17px;
+.prog{
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:16px;
-  box-shadow:0 5px 20px rgba(0,0,0,.04);
-  margin-bottom:18px;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:15px;
 }
 
-.progress-top{
+.progt{
   display:flex;
   justify-content:space-between;
-  gap:10px;
   font-size:13px;
-  font-weight:800;
-  margin-bottom:9px;
-}
-
-.progress{
-  height:9px;
-  border-radius:99px;
-  background:#e5e7eb;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  background:linear-gradient(90deg,var(--blue),var(--green),var(--violet));
-  transition:.3s;
-}
-
-.question-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:32px;
-  box-shadow:var(--shadow);
-}
-
-.subject-label{
-  display:inline-flex;
-  padding:7px 12px;
-  border-radius:999px;
-  color:white;
-  background:linear-gradient(135deg,var(--blue),var(--violet));
-  font-size:12px;
-  font-weight:900;
-  margin-bottom:18px;
-}
-
-.question-number{
-  color:var(--muted);
-  font-size:14px;
   font-weight:800;
   margin-bottom:8px;
 }
 
-.question-text{
-  font-size:23px;
-  line-height:1.45;
+.bar{
+  height:8px;
+  background:#e5e7eb;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    var(--blue),
+    var(--green),
+    var(--violet)
+  );
+}
+
+.qcard{
+  padding:28px;
+}
+
+.tag{
+  display:inline-block;
+  padding:7px 11px;
+  border-radius:99px;
+  background:linear-gradient(
+    135deg,
+    var(--blue),
+    var(--violet)
+  );
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.qnum{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+  margin:16px 0 7px;
+}
+
+.question{
+  font-size:22px;
+  line-height:1.5;
   font-weight:850;
   color:var(--navy);
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .answers{
   display:grid;
-  gap:12px;
+  gap:10px;
 }
 
 .answer{
-  border:2px solid var(--border);
-  background:white;
-  padding:16px;
-  border-radius:13px;
+  width:100%;
   text-align:left;
+  border:2px solid var(--border);
+  background:#fff;
+  border-radius:12px;
+  padding:13px;
   display:flex;
-  gap:13px;
+  gap:11px;
   align-items:center;
-  transition:.18s;
+  transition:.15s;
 }
 
 .answer:hover{
   border-color:var(--blue);
   background:#f8fbff;
-  transform:translateX(2px);
 }
 
-.answer-letter{
-  width:35px;
-  height:35px;
-  min-width:35px;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.answer.selected{
+  border-color:var(--blue);
+  background:#eff6ff;
+}
+
+.letter{
+  width:32px;
+  height:32px;
+  border-radius:9px;
   background:#eef2ff;
   color:var(--blue);
-  font-weight:950;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  flex:none;
 }
 
-.answer-text{
-  font-weight:700;
-  line-height:1.4;
-}
-
-.question-footer{
+.foot{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-top:25px;
   gap:10px;
+  margin-top:20px;
 }
 
-.question-time{
-  color:var(--muted);
-  font-weight:800;
-}
-
-.question-time strong{
-  color:var(--green-dark);
-}
-
-.next-btn{
+.next,
+.review,
+.skip,
+.close{
   border:0;
-  padding:13px 22px;
-  border-radius:11px;
-  color:white;
-  background:var(--navy);
+  border-radius:10px;
+  padding:12px 16px;
   font-weight:900;
 }
 
-.next-btn:disabled{
-  opacity:.45;
+.next{
+  background:var(--navy);
+  color:#fff;
+}
+
+.next:disabled{
+  opacity:.4;
   cursor:not-allowed;
 }
 
-.review-btn{
-  border:1px solid var(--violet);
+.review{
+  background:#fff;
   color:var(--violet);
-  background:white;
-  padding:12px 17px;
-  border-radius:11px;
-  font-weight:800;
+  border:1px solid var(--violet);
 }
 
 /* ================= READING ================= */
 
-.reading-screen{
-  max-width:950px;
-  margin:auto;
-  padding:35px 18px 60px;
-}
-
-.reading-card{
-  background:white;
-  border-radius:24px;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
+.readingbox{
   overflow:hidden;
 }
 
-.reading-head{
-  padding:28px;
-  background:linear-gradient(135deg,var(--navy),#182654);
-  color:white;
-}
-
-.reading-head h2{
-  font-size:28px;
-  margin-bottom:8px;
-}
-
-.reading-head p{
-  color:#cbd5e1;
-}
-
-.reading-timer{
-  margin-top:20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  background:#000;
-  padding:13px 16px;
-  border-radius:12px;
-}
-
-.reading-clock{
-  font-size:24px;
-  font-weight:950;
+.readhead{
+  padding:25px;
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    #17275b
+  );
   color:#fff;
 }
 
-.skip-btn{
-  border:0;
-  background:var(--green);
-  color:white;
-  font-weight:900;
-  padding:12px 17px;
+.readhead h2{
+  margin:0 0 7px;
+}
+
+.readhead p{
+  color:#cbd5e1;
+}
+
+.readtime{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  background:#000;
+  padding:12px;
   border-radius:10px;
+  margin-top:15px;
 }
 
-.reading-body{
-  padding:35px;
+.clock{
+  font-size:23px;
+  font-weight:900;
 }
 
-.reading-body h3{
+.skip{
+  background:var(--green);
+  color:#fff;
+}
+
+.readbody{
+  padding:28px;
+}
+
+.readbody h3{
   color:var(--violet);
   font-size:25px;
-  margin-bottom:18px;
 }
 
-.reading-body p{
-  font-size:17px;
+.readbody p{
   line-height:1.9;
-  margin-bottom:18px;
   color:#273449;
 }
 
 /* ================= MODAL ================= */
 
-.modal{
+.modal,
+.warn{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.65);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:100;
+  background:rgba(0,0,0,.68);
+  z-index:30;
+  display:grid;
+  place-items:center;
   padding:18px;
 }
 
-.modal-card{
+.modalbox,
+.warnbox{
+  background:#fff;
+  border-radius:18px;
   max-width:800px;
   max-height:85vh;
   overflow:auto;
-  background:white;
-  border-radius:20px;
-  box-shadow:0 25px 80px rgba(0,0,0,.3);
-  padding:30px;
+  padding:27px;
 }
 
-.modal-card h2{
-  color:var(--navy);
-  margin-bottom:18px;
-}
-
-.modal-card p{
+.modalbox p{
   line-height:1.8;
-  margin-bottom:15px;
 }
 
-.close-btn{
-  border:0;
+.close{
   background:var(--navy);
-  color:white;
-  padding:11px 18px;
-  border-radius:9px;
-  font-weight:800;
-  margin-top:10px;
+  color:#fff;
 }
 
-/* ================= WARNING ================= */
-
-.warning{
-  position:fixed;
-  inset:0;
-  background:rgba(8,13,24,.92);
-  z-index:200;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.warning-card{
-  max-width:500px;
-  background:white;
-  padding:35px;
-  border-radius:22px;
+.warnbox{
+  max-width:470px;
   text-align:center;
-  border-top:6px solid var(--danger);
+  border-top:5px solid var(--danger);
 }
 
-.warning-card h2{
+.warnbox h2{
   color:var(--danger);
-  margin-bottom:12px;
-}
-
-.warning-card p{
-  color:var(--muted);
-  line-height:1.6;
 }
 
 /* ================= RESULTS ================= */
 
-.results{
-  max-width:1000px;
-  margin:auto;
-  padding:35px 18px 70px;
-}
-
-.result-hero{
-  background:linear-gradient(135deg,var(--navy),#17275b);
-  color:white;
-  border-radius:24px;
-  padding:35px;
+.resultHero{
+  padding:30px;
   text-align:center;
-  box-shadow:var(--shadow);
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    #17275b
+  );
+  color:#fff;
+  border-radius:20px;
 }
 
 .score{
-  font-size:65px;
+  font-size:62px;
   font-weight:950;
-  margin:10px 0;
+  margin:8px;
 }
 
-.result-message{
-  color:#cbd5e1;
-}
-
-.stats{
+.stats,
+.subjects{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin:18px 0;
+  gap:10px;
+  margin:15px 0;
 }
 
-.stat{
-  background:white;
+.stat,
+.subres{
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:15px;
-  padding:20px;
+  border-radius:13px;
+  padding:17px;
   text-align:center;
 }
 
-.stat b{
+.stat b,
+.subres b{
+  font-size:24px;
+  color:var(--navy);
   display:block;
-  font-size:25px;
-  color:var(--navy);
-  margin-bottom:5px;
-}
-
-.stat span{
-  font-size:12px;
-  color:var(--muted);
-}
-
-.subject-results{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:25px;
-}
-
-.subject-result{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:15px;
-  padding:18px;
-}
-
-.subject-result h3{
-  font-size:14px;
-  color:var(--navy);
-  margin-bottom:8px;
-}
-
-.subject-result strong{
-  font-size:25px;
-  color:var(--green-dark);
 }
 
 .errors{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:25px;
+  padding:23px;
 }
 
-.errors h2{
-  color:var(--navy);
-  margin-bottom:20px;
-}
-
-.error-item{
-  padding:20px 0;
+.error{
+  padding:17px 0;
   border-bottom:1px solid var(--border);
-}
-
-.error-item:last-child{
-  border-bottom:0;
-}
-
-.error-q{
-  font-weight:900;
-  color:var(--navy);
-  margin-bottom:10px;
-}
-
-.your-answer{
-  color:var(--danger);
-  margin:5px 0;
-}
-
-.correct-answer{
-  color:var(--green-dark);
-  margin:5px 0;
-}
-
-.explanation{
-  margin-top:9px;
-  padding:13px;
-  background:#f0fdf4;
-  border-left:4px solid var(--green);
-  border-radius:7px;
   line-height:1.6;
 }
 
-.restart{
-  margin-top:25px;
+.bad{
+  color:var(--danger);
 }
 
-/* ================= FOOTER ================= */
+.good{
+  color:#047857;
+}
+
+.explain{
+  background:#f0fdf4;
+  border-left:4px solid var(--green);
+  padding:11px;
+  margin-top:8px;
+}
 
 footer{
   text-align:center;
-  padding:30px;
   color:var(--muted);
-  font-size:13px;
+  padding:25px;
 }
 
-footer strong{
+footer b{
   color:var(--violet);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
-@media(max-width:750px){
-  .home-card{
-    padding:30px 20px;
-    border-radius:20px;
+@media(max-width:650px){
+
+  .homecard{
+    padding:27px 19px;
   }
 
-  .rules{
-    grid-template-columns:1fr;
+  .rules,
+  .stats,
+  .subjects{
+    grid-template-columns:1fr 1fr;
   }
 
-  .header-info .badge{
-    display:none;
-  }
-
-  .question-card{
-    padding:22px 17px;
-  }
-
-  .question-text{
+  .question{
     font-size:19px;
   }
 
-  .reading-body{
-    padding:22px;
+  .qcard,
+  .readbody{
+    padding:20px;
   }
 
-  .reading-body p{
-    font-size:16px;
+  .foot,
+  .readtime{
+    flex-direction:column;
+    align-items:stretch;
   }
 
-  .stats,
-  .subject-results{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .score{
-    font-size:50px;
+  .next,
+  .review,
+  .skip{
+    width:100%;
   }
 }
 
-@media(max-width:430px){
-  .topbar{
-    padding:13px;
+@media(max-width:420px){
+
+  .rules,
+  .stats,
+  .subjects{
+    grid-template-columns:1fr;
   }
 
-  .brand h1{
-    font-size:13px;
-  }
-
-  .timer{
-    min-width:80px;
-    font-size:12px;
-  }
-
-  .question-footer{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .next-btn,
-  .review-btn{
-    width:100%;
-  }
-
-  .reading-timer{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .skip-btn{
-    width:100%;
+  .brand small{
+    display:none;
   }
 }
 </style>
@@ -802,181 +580,266 @@ footer strong{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<header class="top">
+  <div class="topin">
 
-<header class="topbar">
-  <div class="topbar-inner">
     <div class="brand">
       <div class="logo">N</div>
+
       <div>
-        <h1>PRÉPA EXCELLENTIA WANTANSHI</h1>
-        <span>TEST BLANC — NIVEAU EXCELLENTIA</span>
+        <b>PRÉPA EXCELLENTIA WANTANSHI</b>
+        <small>TEST BLANC • NATHAN</small>
       </div>
     </div>
 
-    <div class="header-info">
-      <div class="badge" id="candidateBadge">Candidat</div>
-      <div class="timer" id="globalTimer">00:00</div>
+    <div class="timer" id="globalTimer">
+      00:00
     </div>
+
   </div>
 </header>
 
 
-<!-- ================= HOME ================= -->
+<main>
 
-<section id="home" class="hero page">
-  <div class="home-card">
-    <div class="home-content">
+<!-- ================= ACCUEIL ================= -->
 
-      <div class="main-title">
-        TEST BLANC<br>
-        <strong>EXCELLENTIA</strong>
+<section id="home" class="page home">
+
+  <div class="card homecard">
+
+    <h1>
+      TEST BLANC<br>
+      <span class="blue">EXCELLENTIA</span>
+    </h1>
+
+    <p class="sub">
+      100 questions • 25 par matière • une seule bonne réponse.
+      Les lectures française et anglaise précèdent toujours leurs
+      questions.
+    </p>
+
+    <div class="rules">
+
+      <div class="rule">
+        <b>Mathématiques</b><br>
+        Q1 à Q25
       </div>
 
-      <p class="subtitle">
-        Évaluation complète de 100 questions en mathématiques,
-        français, anglais et culture générale.
+      <div class="rule">
+        <b>Français</b><br>
+        Lecture puis Q26 à Q50
+      </div>
+
+      <div class="rule">
+        <b>English</b><br>
+        Reading puis Q51 à Q75
+      </div>
+
+      <div class="rule">
+        <b>Culture générale</b><br>
+        Q76 à Q100
+      </div>
+
+    </div>
+
+    <label for="name">
+      <b>Nom complet du candidat</b>
+    </label>
+
+    <input
+      id="name"
+      class="input"
+      maxlength="80"
+      placeholder="Exemple : Nathan Tshik"
+      autocomplete="off"
+    >
+
+    <button id="start" class="primary">
+      COMMENCER LE TEST
+    </button>
+
+    <div class="chips">
+      <span class="chip">BLEU</span>
+      <span class="chip">NOIR</span>
+      <span class="chip">BLANC</span>
+      <span class="chip">VERT</span>
+      <span class="chip">VIOLET</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= QUESTIONS ================= -->
+
+<section id="test" class="test hidden">
+
+  <div class="prog">
+
+    <div class="progt">
+      <span id="progress">
+        Question 1 / 100
+      </span>
+
+      <span id="subject">
+        Mathématiques
+      </span>
+    </div>
+
+    <div class="bar">
+      <i id="bar"></i>
+    </div>
+
+  </div>
+
+  <div id="qarea"></div>
+
+</section>
+
+
+<!-- ================= LECTURE ================= -->
+
+<section id="reading" class="reading hidden">
+
+  <div class="card readingbox">
+
+    <div class="readhead">
+
+      <h2 id="readTitle"></h2>
+
+      <p>
+        Vous pouvez passer immédiatement aux questions.
+        Si le temps atteint 00:00, les questions commencent
+        automatiquement.
       </p>
 
-      <div class="nathan">NATHAN</div>
+      <div class="readtime">
 
-      <div class="rules">
+        <div>
+          <small>TEMPS DE LECTURE</small>
 
-        <div class="rule">
-          <b>100 questions</b><br>
-          25 questions par matière.
-        </div>
-
-        <div class="rule">
-          <b>1 seule bonne réponse</b><br>
-          Choisissez A, B, C ou D.
-        </div>
-
-        <div class="rule">
-          <b>1 minute / question</b><br>
-          Passage automatique après 60 secondes.
-        </div>
-
-        <div class="rule">
-          <b>Lecture : 15 minutes</b><br>
-          Français et anglais avec possibilité de passer immédiatement.
-        </div>
-
-      </div>
-
-      <label class="input-label" for="candidateName">
-        Nom complet du candidat
-      </label>
-
-      <input
-        id="candidateName"
-        class="name-input"
-        type="text"
-        maxlength="80"
-        placeholder="Exemple : Nathan Tshik"
-        autocomplete="off"
-      >
-
-      <button id="startBtn" class="primary-btn">
-        COMMENCER LE TEST
-      </button>
-
-      <div class="subjects">
-        <span class="subject">MATHÉMATIQUES</span>
-        <span class="subject">FRANÇAIS</span>
-        <span class="subject">ENGLISH</span>
-        <span class="subject">CULTURE GÉNÉRALE</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= TEST ================= -->
-
-<section id="test" class="hidden">
-
-  <div class="test-container">
-
-    <div class="progress-wrap">
-
-      <div class="progress-top">
-        <span id="progressText">Question 1 / 100</span>
-        <span id="subjectText">Mathématiques</span>
-      </div>
-
-      <div class="progress">
-        <div id="progressBar" class="progress-bar" style="width:1%"></div>
-      </div>
-
-    </div>
-
-    <div id="questionArea"></div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= READING ================= -->
-
-<section id="reading" class="hidden">
-
-  <div class="reading-screen">
-
-    <div class="reading-card">
-
-      <div class="reading-head">
-
-        <h2 id="readingTitle">
-          Lecture
-        </h2>
-
-        <p>
-          Lisez attentivement le texte avant de répondre aux questions.
-        </p>
-
-        <div class="reading-timer">
-
-          <div>
-            <div style="font-size:11px;color:#94a3b8;">
-              TEMPS DE LECTURE
-            </div>
-
-            <div id="readingClock" class="reading-clock">
-              15:00
-            </div>
+          <div
+            class="clock"
+            id="readClock"
+          >
+            15:00
           </div>
-
-          <button id="skipReading" class="skip-btn">
-            PASSER AUX QUESTIONS →
-          </button>
-
         </div>
+
+        <button
+          id="skip"
+          class="skip"
+        >
+          PASSER AUX QUESTIONS →
+        </button>
 
       </div>
 
-      <div id="readingBody" class="reading-body"></div>
-
     </div>
+
+    <div
+      id="readBody"
+      class="readbody"
+    ></div>
 
   </div>
 
 </section>
 
 
-<!-- ================= MODAL TEXT ================= -->
+<!-- ================= RÉSULTATS ================= -->
 
-<div id="modal" class="modal hidden">
+<section id="results" class="results hidden">
 
-  <div class="modal-card">
+  <div class="resultHero">
 
-    <h2 id="modalTitle">Texte</h2>
+    <div id="resultName"></div>
+
+    <div
+      id="score"
+      class="score"
+    >
+      0%
+    </div>
+
+    <div id="message"></div>
+
+  </div>
+
+
+  <div class="stats">
+
+    <div class="stat">
+      <b id="correct">0</b>
+      <span>Bonnes réponses</span>
+    </div>
+
+    <div class="stat">
+      <b id="wrong">0</b>
+      <span>Erreurs</span>
+    </div>
+
+    <div class="stat">
+      <b id="skipped">0</b>
+      <span>Sans réponse</span>
+    </div>
+
+    <div class="stat">
+      <b id="spent">00:00</b>
+      <span>Temps utilisé</span>
+    </div>
+
+  </div>
+
+
+  <div
+    id="subjects"
+    class="subjects"
+  ></div>
+
+
+  <div class="card errors">
+
+    <h2>
+      Correction détaillée
+    </h2>
+
+    <div id="errorList"></div>
+
+  </div>
+
+
+  <button
+    id="restart"
+    class="primary"
+  >
+    RECOMMENCER
+  </button>
+
+</section>
+
+</main>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+  id="modal"
+  class="modal hidden"
+>
+
+  <div class="modalbox">
+
+    <h2 id="modalTitle"></h2>
 
     <div id="modalBody"></div>
 
-    <button id="closeModal" class="close-btn">
+    <button
+      id="close"
+      class="close"
+    >
       Fermer
     </button>
 
@@ -985,20 +848,28 @@ footer strong{
 </div>
 
 
-<!-- ================= WARNING ================= -->
+<!-- ================= ANTI-TRICHE ================= -->
 
-<div id="warning" class="warning hidden">
+<div
+  id="warn"
+  class="warn hidden"
+>
 
-  <div class="warning-card">
+  <div class="warnbox">
 
-    <h2>⚠ Tentative de triche détectée</h2>
+    <h2>
+      ⚠ Tentative de triche détectée
+    </h2>
 
     <p>
-      Vous avez quitté la fenêtre ou changé d'onglet pendant le test.
-      Cet incident a été enregistré.
+      Le changement d'onglet ou de fenêtre pendant
+      le test a été détecté.
     </p>
 
-    <button id="closeWarning" class="close-btn">
+    <button
+      id="warnClose"
+      class="close"
+    >
       Revenir au test
     </button>
 
@@ -1007,94 +878,28 @@ footer strong{
 </div>
 
 
-<!-- ================= RESULTS ================= -->
-
-<section id="results" class="hidden">
-
-  <div class="results">
-
-    <div class="result-hero">
-
-      <div id="resultCandidate">
-        Candidat
-      </div>
-
-      <div class="score" id="finalScore">
-        0%
-      </div>
-
-      <div class="result-message" id="resultMessage">
-        Résultat
-      </div>
-
-    </div>
-
-    <div class="stats">
-
-      <div class="stat">
-        <b id="correctCount">0</b>
-        <span>Bonnes réponses</span>
-      </div>
-
-      <div class="stat">
-        <b id="wrongCount">0</b>
-        <span>Erreurs</span>
-      </div>
-
-      <div class="stat">
-        <b id="skippedCount">0</b>
-        <span>Sans réponse</span>
-      </div>
-
-      <div class="stat">
-        <b id="timeSpent">00:00</b>
-        <span>Temps utilisé</span>
-      </div>
-
-    </div>
-
-    <div id="subjectResults" class="subject-results"></div>
-
-    <div class="errors">
-
-      <h2>Correction détaillée</h2>
-
-      <div id="errorList"></div>
-
-    </div>
-
-    <button
-      id="restartBtn"
-      class="primary-btn restart"
-    >
-      RECOMMENCER LE TEST
-    </button>
-
-  </div>
-
-</section>
-
-
 <footer>
-  PRÉPA EXCELLENTIA WANTANSHI — <strong>by Nathan</strong>
+  PRÉPA EXCELLENTIA WANTANSHI —
+  <b>by Nathan</b>
 </footer>
 
 
 <script>
+"use strict";
 
 /* ============================================================
-   TEXTES DE LECTURE
+   TEXTES
    ============================================================ */
 
-const FR_TEXT = {
+const FR = {
   title:"LE CARNET OUBLIÉ",
-  paragraphs:[
+
+  p:[
     `Dans une ancienne ville minière, une petite gare abandonnée
     semblait avoir été oubliée par le temps. Les rails rouillés
-    disparaissaient progressivement sous les herbes, tandis que
-    les murs du bâtiment conservaient encore les traces d'une
-    époque où les trains reliaient la ville aux grands centres
-    économiques de la région.`,
+    disparaissaient sous les herbes, tandis que les murs
+    conservaient les traces d'une époque où les trains reliaient
+    la ville aux grands centres économiques.`,
 
     `Un jour, Salomé Kanza, restauratrice de documents anciens,
     entra dans le bâtiment. Elle y découvrit une vieille armoire
@@ -1108,16 +913,14 @@ const FR_TEXT = {
     bien plus importante que leur simple âge.`,
 
     `Elle proposa à la municipalité de restaurer les archives.
-    Certains habitants furent d'abord sceptiques. Pour eux, ces
-    vieux papiers ne pouvaient pas rivaliser avec les monuments
-    modernes. Pourtant, au fil du projet, les habitants commencèrent
-    à reconnaître des noms, des lieux et des événements racontés
-    par leurs parents et leurs grands-parents.`,
+    Certains habitants furent d'abord sceptiques. Pourtant, ils
+    commencèrent à reconnaître des noms, des lieux et des événements
+    racontés par leurs parents et leurs grands-parents.`,
 
-    `Augustin avait écrit dans l'un de ses carnets :
+    `Augustin avait écrit :
     « Une ville n'est pas faite seulement de bâtiments ; elle est
-    faite de ce que les hommes y ont vécu. » Cette phrase devint
-    le principe du projet.`,
+    faite de ce que les hommes y ont vécu. »
+    Cette phrase devint le principe du projet.`,
 
     `La vieille gare fut finalement transformée en centre de mémoire.
     Les carnets furent restaurés et exposés avec des photographies,
@@ -1125,16 +928,18 @@ const FR_TEXT = {
     reconstruire exactement son passé. Elle choisit plutôt de le
     comprendre afin de mieux réfléchir à son avenir.`,
 
-    `Ainsi, le carnet oublié ne fut plus seulement un document ancien.
-    Il devint un lien entre plusieurs générations et rappela aux
-    habitants que préserver la mémoire d'une communauté, c'est
-    aussi préserver une partie de son identité.`
+    `Ainsi, le carnet oublié devint un lien entre plusieurs
+    générations et rappela aux habitants que préserver la mémoire
+    d'une communauté, c'est aussi préserver une partie de son
+    identité.`
   ]
 };
 
-const EN_TEXT = {
+
+const EN = {
   title:"THE CLOCKMAKER OF THE DESERT",
-  paragraphs:[
+
+  p:[
     `For many years, an old clockmaker named Elias lived in a small
     desert town. His workshop was modest, but people from distant
     villages came to him because he could repair almost any clock.`,
@@ -1144,31 +949,29 @@ const EN_TEXT = {
     been given as wedding presents, and a few had travelled across
     countries before reaching his workshop.`,
 
-    `One summer, a young engineer named Maya arrived in the town.
-    She was surprised to see that Elias still used tools that were
-    decades old. She suggested that he should replace them with
-    modern machines.`,
+    `One summer, a young engineer named Maya arrived. She was
+    surprised to see that Elias still used tools that were decades
+    old. She suggested that he should replace them with modern
+    machines.`,
 
-    `Elias smiled and explained that modern technology was useful,
-    but patience and observation were equally important. He invited
-    Maya to spend a week in his workshop. During that week, she
-    discovered that he could identify a mechanical problem simply
-    by listening to the sound of a clock.`,
+    `Elias explained that modern technology was useful, but patience
+    and observation were equally important. He invited Maya to spend
+    a week in his workshop. She discovered that he could identify a
+    mechanical problem simply by listening to a clock.`,
 
-    `Before leaving, Maya understood something important. Progress
-    did not always mean abandoning old methods. Sometimes the best
-    solution was to combine experience with new ideas.`,
+    `Before leaving, Maya understood that progress did not always
+    mean abandoning old methods. Sometimes the best solution was to
+    combine experience with new ideas.`,
 
-    `Years later, Maya returned to the town. She had become an
-    engineer and had designed a small digital system for preserving
-    old mechanical clocks. Elias was proud of her. Together, they
-    created a workshop where traditional knowledge and modern
-    technology could work side by side.`,
+    `Years later, Maya returned. She had become an engineer and had
+    designed a small digital system for preserving old mechanical
+    clocks. Together, they created a workshop where traditional
+    knowledge and modern technology could work side by side.`,
 
     `The workshop became popular. Visitors came not only to repair
-    clocks, but also to learn about the history behind them.
-    Elias often repeated the same lesson: useful knowledge should
-    not disappear simply because newer tools exist.`
+    clocks, but also to learn about the history behind them. Elias
+    often repeated that useful knowledge should not disappear simply
+    because newer tools exist.`
   ]
 };
 
@@ -1177,800 +980,926 @@ const EN_TEXT = {
    QUESTIONS
    ============================================================ */
 
-const questions = [];
+const Q = [];
 
-function add(subject, question, options, answer, explanation, meta={}) {
-  questions.push({
-    subject,
-    question,
-    options,
-    answer,
-    explanation,
-    ...meta
+function add(
+  subject,
+  question,
+  options,
+  answer,
+  explanation,
+  reading=""
+){
+  Q.push({
+    s:subject,
+    q:question,
+    o:options,
+    a:answer,
+    e:explanation,
+    r:reading
   });
 }
 
 
 /* ============================================================
-   MATHÉMATIQUES — 1 À 25
+   MATHÉMATIQUES — 25
    ============================================================ */
 
-add("Mathématiques",
+const M = [
+
+[
 "Quel est le résultat de 2(3x−4)−3(x+2)+5 ?",
 ["3x−9","3x−1","9x−9","3x+9"],
 0,
-"2(3x−4)=6x−8 et −3(x+2)=−3x−6. Donc 6x−8−3x−6+5=3x−9.");
+"On développe puis on réduit : 6x−8−3x−6+5=3x−9."
+],
 
-add("Mathématiques",
+[
 "Le reste de la division de P(x)=2x³−x²+3x−5 par x−2 est :",
 ["−1","3","9","13"],
 3,
-"D'après le théorème du reste, le reste vaut P(2). P(2)=2(8)−4+6−5=13.");
+"Le reste vaut P(2)=16−4+6−5=13."
+],
 
-add("Mathématiques",
+[
 "Factoriser x³−4x donne :",
 ["x(x−4)","x(x−2)(x+2)","(x−2)(x+2)","x²(x−4)"],
 1,
-"x³−4x=x(x²−4)=x(x−2)(x+2).");
+"x³−4x=x(x²−4)=x(x−2)(x+2)."
+],
 
-add("Mathématiques",
+[
 "Pour −3<x<2, le signe de (x+3)(x−2) est :",
 ["positif","négatif","nul","toujours positif"],
 1,
-"Sur ]−3;2[, x+3 est positif tandis que x−2 est négatif. Le produit est donc négatif.");
+"Le premier facteur est positif et le second négatif."
+],
 
-add("Mathématiques",
-"Quel est le domaine de définition de f(x)=(x+1)/(x²−9) ?",
+[
+"Domaine de (x+1)/(x²−9) ?",
 ["R","R\\{3}","R\\{−3;3}","R\\{−9;9}"],
 2,
-"Le dénominateur doit être non nul : x²−9≠0, donc x≠−3 et x≠3.");
+"Le dénominateur impose x≠−3 et x≠3."
+],
 
-add("Mathématiques",
-"Quel est le domaine de définition de √(5−2x) ?",
+[
+"Domaine de √(5−2x) ?",
 ["]−∞;5/2]","[5/2;+∞[","]−∞;5[","R"],
 0,
-"Il faut 5−2x≥0, donc x≤5/2.");
+"Il faut 5−2x≥0, donc x≤5/2."
+],
 
-add("Mathématiques",
-"Quel est le domaine de définition de ln(2x−6) ?",
+[
+"Domaine de ln(2x−6) ?",
 ["x≥3","x>3","x<3","x≠3"],
 1,
-"Pour un logarithme, son argument doit être strictement positif : 2x−6>0, donc x>3.");
+"Un logarithme exige un argument strictement positif."
+],
 
-add("Mathématiques",
-"Calculer lim(x→+∞) (5x²+1)/(2x²−3).",
+[
+"lim(x→+∞)(5x²+1)/(2x²−3) = ?",
 ["2/5","5","5/2","+∞"],
 2,
-"Les deux polynômes sont de même degré. La limite est le rapport des coefficients dominants : 5/2.");
+"Même degré : rapport des coefficients dominants =5/2."
+],
 
-add("Mathématiques",
-"L'asymptote horizontale de f(x)=(3x²+1)/(x²−4) est :",
+[
+"L’asymptote horizontale de (3x²+1)/(x²−4) est :",
 ["x=3","y=3","y=0","x=−4"],
 1,
-"À l'infini, la limite est le rapport des coefficients dominants : 3/1=3. Donc y=3.");
+"La limite à l’infini vaut 3."
+],
 
-add("Mathématiques",
-"L'asymptote verticale de f(x)=1/(x+5) est :",
+[
+"L’asymptote verticale de 1/(x+5) est :",
 ["y=−5","x=5","x=−5","y=5"],
 2,
-"Le dénominateur s'annule pour x=−5. L'asymptote verticale est donc x=−5.");
+"Le dénominateur s’annule en x=−5."
+],
 
-add("Mathématiques",
-"La dérivée de f(x)=x³−3x²+2 est :",
+[
+"La dérivée de x³−3x²+2 est :",
 ["3x²−6x","3x²−3x","x²−6x","3x−6"],
 0,
-"(x³)'=3x² et (−3x²)'=−6x. La dérivée est donc 3x²−6x.");
+"(x³)'=3x² et (−3x²)'=−6x."
+],
 
-add("Mathématiques",
-"Le maximum de f(x)=−x²+6x−1 est :",
+[
+"Le maximum de −x²+6x−1 est :",
 ["6","8","9","10"],
 1,
-"f(x)=−(x−3)²+8. Le maximum est donc 8, atteint pour x=3.");
+"−x²+6x−1=−(x−3)²+8."
+],
 
-add("Mathématiques",
-"La fonction f(x)=x²−4x+7 est décroissante sur :",
+[
+"x²−4x+7 est décroissante sur :",
 ["]−∞;2]","[2;+∞[","R","]−∞;−2]"],
 0,
-"f'(x)=2x−4. Elle est négative lorsque x<2 et nulle en 2. La fonction est donc décroissante sur ]−∞;2].");
+"f'(x)=2x−4, négative pour x<2."
+],
 
-add("Mathématiques",
-"Un triangle rectangle possède des côtés de longueurs 9 et 12. Son hypoténuse mesure :",
+[
+"Un triangle rectangle a des côtés 9 et 12. Son hypoténuse vaut :",
 ["13","15","18","21"],
 1,
-"Par Pythagore : c²=9²+12²=81+144=225, donc c=15.");
+"9²+12²=225, donc l’hypoténuse vaut 15."
+],
 
-add("Mathématiques",
-"Dans une configuration de Thalès, si AM/AB=2/3 et AB=18, alors AM vaut :",
+[
+"Dans Thalès, AM/AB=2/3 et AB=18. AM vaut :",
 ["6","9","12","27"],
 2,
-"AM=(2/3)×18=12.");
+"AM=(2/3)×18=12."
+],
 
-add("Mathématiques",
-"Le milieu du segment reliant A(−2;4) et B(3;−1) est :",
+[
+"Milieu de A(−2;4) et B(3;−1) :",
 ["(1/2;3/2)","(5;3)","(−1/2;5/2)","(1;2)"],
 0,
-"Le milieu est ((−2+3)/2 ; (4−1)/2)=(1/2;3/2).");
+"M=((−2+3)/2;(4−1)/2)=(1/2;3/2)."
+],
 
-add("Mathématiques",
-"Les vecteurs u=(2;−3) et v=(−4;6) sont :",
-["orthogonaux","colinéaires","égaux","de normes différentes mais non colinéaires"],
+[
+"u=(2;−3) et v=(−4;6) sont :",
+["orthogonaux","colinéaires","égaux","non colinéaires"],
 1,
-"v=−2u. Les deux vecteurs sont donc colinéaires.");
+"v=−2u."
+],
 
-add("Mathématiques",
-"Dans un triangle rectangle, si sin(A)=3/5 et A est aigu, alors cos(A) vaut :",
+[
+"Si sin(A)=3/5 et A est aigu, cos(A)= ?",
 ["2/5","3/5","4/5","5/3"],
 2,
-"sin²A+cos²A=1. Donc cos A=√(1−9/25)=√(16/25)=4/5.");
+"sin²A+cos²A=1, donc cos A=4/5."
+],
 
-add("Mathématiques",
-"Dans un triangle rectangle, tan(A) est égal à :",
+[
+"Dans un triangle rectangle, tan(A)= :",
 ["adjacent/opposé","opposé/adjacent","hypoténuse/opposé","opposé/hypoténuse"],
 1,
-"tan(A)=côté opposé / côté adjacent.");
+"tan(A)=opposé/adjacent."
+],
 
-add("Mathématiques",
-"Une urne contient 3 boules bleues et 7 boules non bleues. La probabilité de tirer une boule non bleue est :",
+[
+"Une urne contient 3 boules bleues et 7 non bleues. P(non bleue)= ?",
 ["3/10","7/10","1/2","10/7"],
 1,
-"Il y a 7 boules non bleues sur 10 boules au total : P=7/10.");
+"7 issues favorables sur 10."
+],
 
-add("Mathématiques",
-"On lance deux dés équilibrés. La probabilité d'obtenir une somme égale à 7 est :",
+[
+"Deux dés équilibrés. P(somme=7)= ?",
 ["1/12","1/6","1/4","1/3"],
 1,
-"Les six couples donnant 7 sont (1,6),(2,5),(3,4),(4,3),(5,2),(6,1), parmi 36 issues. Donc 6/36=1/6.");
+"6 couples sur 36 donnent 7 : 6/36=1/6."
+],
 
-add("Mathématiques",
-"Si un entier est divisible par 4, alors il est nécessairement divisible par :",
+[
+"Si un entier est divisible par 4, il est nécessairement divisible par :",
 ["2","3","5","7"],
 0,
-"Tout multiple de 4 est également multiple de 2.");
+"Tout multiple de 4 est multiple de 2."
+],
 
-add("Mathématiques",
-"Pour l'équation x²=4, la condition x=2 est :",
+[
+"Pour x²=4, la condition x=2 est :",
 ["nécessaire et suffisante","suffisante mais non nécessaire","nécessaire mais non suffisante","ni nécessaire ni suffisante"],
 1,
-"x=2 entraîne x²=4, donc elle est suffisante. Mais x=−2 convient aussi : elle n'est donc pas nécessaire.");
+"x=2 suffit, mais x=−2 est aussi solution."
+],
 
-add("Mathématiques",
-"Une suite arithmétique vérifie u3=11 et u7=23. Sa raison est :",
+[
+"Suite arithmétique : u3=11 et u7=23. Sa raison vaut :",
 ["2","3","4","6"],
 1,
-"u7−u3=4r. Donc 23−11=12=4r, d'où r=3.");
+"23−11=4r, donc r=3."
+],
 
-add("Mathématiques",
-"Une suite géométrique vérifie u2=6 et u5=162, avec une raison positive. Sa raison est :",
+[
+"Suite géométrique : u2=6 et u5=162, raison positive. q vaut :",
 ["2","3","4","6"],
 1,
-"u5=u2×q³. Donc 162=6q³, soit q³=27 et q=3.");
+"162=6q³, donc q³=27 et q=3."
+]
+
+];
+
+M.forEach(x =>
+  add(
+    "Mathématiques",
+    x[0],
+    x[1],
+    x[2],
+    x[3]
+  )
+);
 
 
 /* ============================================================
-   FRANÇAIS — 26 À 50
+   FRANÇAIS — 25
    ============================================================ */
 
-add("Français",
-"Dans le texte, que découvre Salomé dans une vieille armoire ?",
-["Des photographies modernes","Des carnets anciens","Des objets précieux","Des cartes bancaires"],
-1,
-"Le texte précise qu'elle découvre plusieurs carnets couverts de poussière.",
-{reading:"fr"});
+const F = [
 
-add("Français",
-"À qui appartenaient les carnets retrouvés ?",
+[
+"Que découvre Salomé dans une vieille armoire ?",
+["Des photos modernes","Des carnets anciens","De l’argent","Des cartes bancaires"],
+1,
+"Elle découvre plusieurs carnets couverts de poussière."
+],
+
+[
+"À qui appartenaient les carnets ?",
 ["À Salomé","À un maire","À Augustin","À un professeur"],
 2,
-"Les carnets appartenaient à Augustin, ancien employé de la gare.",
-{reading:"fr"});
+"Ils appartenaient à Augustin, ancien employé de la gare."
+],
 
-add("Français",
-"Que racontaient principalement les carnets ?",
-["Uniquement des événements politiques","La vie quotidienne de la ville","Des recettes de cuisine","Des voyages à l'étranger"],
+[
+"Que racontaient les carnets ?",
+["Uniquement la politique","La vie quotidienne de la ville","Des recettes","Des voyages"],
 1,
-"Ils racontaient les départs, les arrivées, les fêtes, les conflits et différentes histoires des habitants.",
-{reading:"fr"});
+"Ils racontaient les départs, arrivées, fêtes, conflits et histoires des habitants."
+],
 
-add("Français",
-"Pourquoi les habitants changent-ils progressivement d'avis sur les carnets ?",
-["Ils découvrent leur valeur historique et leurs propres liens avec les récits.","Ils veulent vendre les carnets.","La gare devient une école.","Les carnets contiennent de l'argent."],
+[
+"Pourquoi les habitants changent-ils d’avis ?",
+["Ils reconnaissent des liens avec leur histoire.","Ils veulent vendre les carnets.","La gare devient une école.","Les carnets contiennent de l’or."],
 0,
-"Les habitants reconnaissent des noms, des lieux et des événements liés à leurs familles.",
-{reading:"fr"});
+"Ils reconnaissent des noms, lieux et événements liés à leurs familles."
+],
 
-add("Français",
+[
 "Selon Augustin, une ville est faite :",
-["Seulement de bâtiments anciens","Uniquement de monuments","Des bâtiments et de ce que les hommes y ont vécu","Seulement de souvenirs"],
+["Seulement de bâtiments","De monuments uniquement","De bâtiments et de ce que les hommes y ont vécu","Seulement de souvenirs"],
 2,
-"La citation d'Augustin insiste sur l'expérience humaine qui accompagne les bâtiments.",
-{reading:"fr"});
+"C’est le sens de sa citation."
+],
 
-add("Français",
+[
 "Quel projet est finalement réalisé ?",
-["La destruction de la gare","La transformation de la gare en centre de mémoire","La fermeture des archives","La construction d'un nouvel aéroport"],
+["Destruction de la gare","Centre de mémoire","Fermeture des archives","Aéroport"],
 1,
-"La gare devient un centre de mémoire.",
-{reading:"fr"});
+"La gare devient un centre de mémoire."
+],
 
-add("Français",
-"Quelle est l'idée principale du texte ?",
-["Il faut supprimer les anciennes archives.","Le passé n'a aucune importance.","La mémoire collective peut contribuer à comprendre le présent et l'avenir.","Les villes doivent rester inchangées."],
+[
+"Idée principale du texte ?",
+["Oublier le passé","Le passé ne sert à rien","La mémoire aide à comprendre le présent et l’avenir","Les villes ne doivent jamais changer"],
 2,
-"Le texte montre que préserver la mémoire permet de comprendre l'histoire et de réfléchir à l'avenir.",
-{reading:"fr"});
+"Le texte défend la transmission de la mémoire."
+],
 
-add("Français",
-"Dans le texte, les carnets deviennent un « lien entre plusieurs générations ». Cette expression insiste surtout sur :",
-["leur valeur commerciale","leur capacité à relier le passé et le présent","leur poids matériel","leur ancienneté uniquement"],
+[
+"Le carnet devient un « lien entre plusieurs générations ». Cela signifie surtout :",
+["Valeur commerciale","Lien entre passé et présent","Poids matériel","Ancienneté uniquement"],
 1,
-"L'expression montre leur rôle de transmission de la mémoire.",
-{reading:"fr"});
+"Il transmet la mémoire entre générations."
+],
 
-add("Français",
-"Le mot « richesse » employé pour parler des souvenirs désigne ici principalement :",
-["une richesse financière","une valeur culturelle et humaine","un trésor caché","une richesse agricole"],
+[
+"« Richesse » à propos des souvenirs est employé :",
+["Au sens financier","Au sens culturel et humain","Comme verbe","Comme adjectif"],
 1,
-"Le terme est employé dans un sens figuré pour désigner une grande valeur culturelle et humaine.",
-{reading:"fr"});
+"Il s’agit d’une valeur symbolique."
+],
 
-add("Français",
-"Quel est le but principal du projet de Salomé ?",
-["Oublier le passé","Préserver et transmettre la mémoire de la communauté","Transformer les carnets en argent","Empêcher les habitants de visiter la gare"],
+[
+"But principal du projet de Salomé ?",
+["Oublier le passé","Préserver et transmettre la mémoire","Vendre les carnets","Fermer la gare"],
 1,
-"Le projet vise à restaurer les archives et à transmettre la mémoire collective.",
-{reading:"fr"});
+"Le projet restaure les archives et leur transmission."
+],
 
-add("Français",
-"Dans « cette ville est une richesse pour sa mémoire », le mot « richesse » est employé :",
-["au sens propre","au sens figuré","comme un adjectif","comme un verbe"],
-1,
-"Une ville n'est pas littéralement une richesse matérielle ici : il s'agit d'une valeur symbolique.");
-
-add("Français",
-"Dans « le temps dialogue avec le présent », quelle figure de style reconnaît-on principalement ?",
+[
+"« Le temps dialogue avec le présent » est une :",
 ["Personnification","Comparaison","Hyperbole","Gradation"],
 0,
-"Le temps reçoit une action humaine, « dialoguer ». C'est une personnification.");
+"Le temps reçoit une action humaine."
+],
 
-add("Français",
-"« Il oublie pour se souvenir » contient principalement :",
-["Une antithèse","Une comparaison","Une périphrase","Une métonymie"],
+[
+"« Il oublie pour se souvenir » contient :",
+["Antithèse","Comparaison","Périphrase","Métonymie"],
 0,
-"Les idées « oublier » et « se souvenir » sont opposées : c'est une antithèse.");
+"Oublier et se souvenir sont opposés."
+],
 
-add("Français",
-"« Une obscure clarté » est un exemple de :",
+[
+"« Une obscure clarté » est :",
 ["Anaphore","Oxymore","Litote","Euphémisme"],
 1,
-"Deux termes contradictoires sont rapprochés : obscure et clarté.");
+"Deux termes contradictoires sont associés."
+],
 
-add("Français",
-"« Ce n'est pas mauvais » pour dire « c'est assez bon » est une :",
+[
+"« Ce n’est pas mauvais » pour dire « c’est assez bon » est une :",
 ["Hyperbole","Litote","Métaphore","Personnification"],
 1,
-"La litote consiste à dire moins pour faire entendre davantage.");
+"La litote dit moins pour suggérer davantage."
+],
 
-add("Français",
-"Dans « Paris s'est réveillé après la victoire », Paris désigne les habitants de Paris. Il s'agit d'une :",
+[
+"« Paris s’est réveillé » pour désigner les habitants est une :",
 ["Synecdoque","Métonymie","Antithèse","Allitération"],
 1,
-"On désigne les habitants par le nom du lieu auquel ils appartiennent : c'est une métonymie.");
+"Le lieu désigne les personnes qui l’habitent : métonymie."
+],
 
-add("Français",
+[
 "Quelle orthographe est correcte ?",
 ["malgrés","malgré","malgrée","malgrès"],
 1,
-"L'orthographe correcte est « malgré ».");
+"La forme correcte est « malgré »."
+],
 
-add("Français",
-"Complétez : « Les lettres qu'elle a ___ hier sont importantes. »",
+[
+"Les lettres qu’elle a ___ hier sont importantes.",
 ["retrouvé","retrouvée","retrouvés","retrouvées"],
 3,
-"Avec avoir, le participe passé s'accorde avec le COD placé avant. « les lettres » est féminin pluriel : retrouvées.");
+"COD féminin pluriel placé avant : « retrouvées »."
+],
 
-add("Français",
-"Complétez : « Bien qu'il ___ fatigué, il continua. »",
+[
+"Bien qu’il ___ fatigué, il continua.",
 ["est","sera","soit","était"],
 2,
-"« Bien que » est suivi du subjonctif : bien qu'il soit fatigué.");
+"« Bien que » appelle ici le subjonctif : soit."
+],
 
-add("Français",
-"« Il fallait qu'il eût compris la situation » contient quel temps ?",
-["Plus-que-parfait de l'indicatif","Passé antérieur","Plus-que-parfait du subjonctif","Conditionnel passé"],
+[
+"« Il fallait qu’il eût compris » contient :",
+["Plus-que-parfait indicatif","Passé antérieur","Plus-que-parfait du subjonctif","Conditionnel passé"],
 2,
-« Eût compris » est le plus-que-parfait du subjonctif.");
+"« eût compris » est le plus-que-parfait du subjonctif."
+],
 
-add("Français",
-"Complétez : « Si elle avait étudié, elle ___ réussi. »",
+[
+"Si elle avait étudié, elle ___ réussi.",
 ["réussira","aurait","aura","réussissait"],
 1,
-"Structure : si + plus-que-parfait → conditionnel passé. « aurait réussi ».");
+"Si + plus-que-parfait → conditionnel passé : aurait réussi."
+],
 
-add("Français",
-"« Il faut travailler pour réussir » peut être transformé en :",
-["Pour réussir, il faut travailler.","Réussir faut travailler il.","Il faut réussir pour travailler.","Travailler réussir il faut."],
+[
+"« Il faut travailler pour réussir » peut devenir :",
+["Pour réussir, il faut travailler.","Pour réussir il travailler faut.","Il faut réussir pour travailler.","Travailler réussir il faut."],
 0,
-"La proposition conserve le même rapport logique avec une construction correcte.");
+"La proposition garde le même rapport logique."
+],
 
-add("Français",
-"« Il faut travailler, travailler et encore travailler » contient principalement :",
-["Une anaphore","Une répétition","Un chiasme","Une litote"],
-1,
-"Le même mot est répété plusieurs fois : c'est une répétition.");
+[
+"« Il faut travailler, travailler et encore travailler » contient surtout :",
+["Répétition","Chiasme","Litote","Métonymie"],
+0,
+"Le mot « travailler » est répété."
+],
 
-add("Français",
-"Dans « Elle parle particulièrement bien », « particulièrement » est :",
-["un nom","un adjectif","un adverbe","un pronom"],
+[
+"Dans « Elle parle particulièrement bien », particulièrement est :",
+["Nom","Adjectif","Adverbe","Pronom"],
 2,
-"« Particulièrement » modifie l'adverbe « bien » : c'est un adverbe.");
+"Il s’agit d’un adverbe."
+],
 
-add("Français",
-"Le mot « pérenne » signifie :",
-["fragile","durable","rapide","ancien uniquement"],
+[
+"Pérenne signifie :",
+["Fragile","Durable","Rapide","Temporaire"],
 1,
-"« Pérenne » signifie durable, qui peut durer longtemps.");
+"Pérenne signifie durable."
+],
+
+[
+"Dans « La ville porte une mémoire vivante », « mémoire vivante » crée principalement :",
+["Une image métaphorique","Une comparaison explicite","Une question","Une définition scientifique"],
+0,
+"La mémoire est présentée comme quelque chose de vivant."
+]
+
+];
+
+F.forEach(x =>
+  add(
+    "Français",
+    x[0],
+    x[1],
+    x[2],
+    x[3],
+    "fr"
+  )
+);
 
 
 /* ============================================================
-   ENGLISH — 51 À 75
+   ENGLISH — 25
    ============================================================ */
 
-add("English",
-"Why did people from distant villages visit Elias?",
-["Because he sold food.","Because he could repair many clocks.","Because he taught mathematics.","Because he owned a hotel."],
-1,
-"The text says people came because Elias could repair almost any clock.",
-{reading:"en"});
+const E = [
 
-add("English",
+[
+"Why did people visit Elias?",
+["He sold food.","He could repair many clocks.","He taught mathematics.","He owned a hotel."],
+1,
+"People came because he could repair almost any clock."
+],
+
+[
 "What did Elias believe about clocks?",
 ["They were useless.","Every clock carried a story.","They were always expensive.","They should be destroyed."],
 1,
-"He believed every clock carried a story.",
-{reading:"en"});
+"He believed every clock carried a story."
+],
 
-add("English",
-"Why was Maya surprised when she arrived?",
-["The workshop was enormous.","Elias used very old tools.","There were no clocks.","The town was modern."],
+[
+"Why was Maya surprised?",
+["The workshop was huge.","Elias used very old tools.","There were no clocks.","The town was modern."],
 1,
-"She was surprised that Elias still used tools that were decades old.",
-{reading:"en"});
+"He still used tools that were decades old."
+],
 
-add("English",
+[
 "What did Elias teach Maya?",
 ["Technology was always bad.","Old methods were always better.","Experience and observation were important.","Clocks could not be repaired."],
 2,
-"He explained that modern technology was useful, but patience and observation were also important.",
-{reading:"en"});
+"He valued modern technology together with patience and observation."
+],
 
-add("English",
-"How could Elias identify some mechanical problems?",
-["By looking at the sky.","By listening to the sound of a clock.","By using a computer.","By asking Maya."],
+[
+"How could Elias identify a mechanical problem?",
+["By looking at the sky.","By listening to the clock.","By using a computer.","By asking Maya."],
 1,
-"He could identify a mechanical problem simply by listening.",
-{reading:"en"});
+"He could identify problems by listening."
+],
 
-add("English",
-"What did Maya understand before leaving?",
+[
+"What did Maya understand?",
 ["Progress means forgetting the past.","Old knowledge and new ideas can work together.","Technology is useless.","Elias was wrong."],
 1,
-"She understood that progress could combine experience with new ideas.",
-{reading:"en"});
+"She understood that experience and new ideas could be combined."
+],
 
-add("English",
-"What did Maya become later?",
+[
+"What did Maya become?",
 ["A doctor","A teacher","An engineer","A pilot"],
 2,
-"The text says she had become an engineer.",
-{reading:"en"});
+"The text says she became an engineer."
+],
 
-add("English",
+[
 "What did Maya design?",
-["A new railway","A digital system for preserving old clocks.","A new desert town.","A large hotel."],
+["A railway","A digital system for preserving old clocks.","A hotel.","A new town."],
 1,
-"She designed a small digital system for preserving old mechanical clocks.",
-{reading:"en"});
+"She designed a digital preservation system."
+],
 
-add("English",
+[
 "What happened to the workshop?",
-["It was closed.","It became popular.","It was destroyed.","It became a school only."],
+["It closed.","It became popular.","It was destroyed.","It became a school."],
 1,
-"The workshop became popular with visitors.",
-{reading:"en"});
+"The workshop became popular."
+],
 
-add("English",
-"What is the main message of the text?",
-["Old knowledge should disappear.","New technology is always better.","Useful knowledge can be preserved while using modern technology.","People should never change."],
+[
+"What is the main message?",
+["Old knowledge should disappear.","New technology is always better.","Traditional knowledge and modern technology can complement each other.","People should never change."],
 2,
-"The central idea is that traditional knowledge and modern technology can complement each other.",
-{reading:"en"});
+"The story argues for combining old knowledge with new tools."
+],
 
-add("English",
+[
 "She's a talented engineer, ___?",
 ["isn't she","doesn't she","wasn't she","hasn't she"],
 0,
-"The main clause is positive with the verb 'is', so the negative tag is 'isn't she?'.");
+"The main verb is 'is', so the negative tag is 'isn't she?'"
+],
 
-add("English",
+[
 "They haven't finished the project, ___?",
 ["have they","haven't they","did they","do they"],
 0,
-"The main clause is negative with 'haven't', so the positive tag is 'have they?'.");
+"A negative main clause takes a positive tag: 'have they?'"
+],
 
-add("English",
+[
 "You went there yesterday, ___?",
 ["didn't you","don't you","haven't you","weren't you"],
 0,
-"The main verb is in the past simple, so the tag uses 'didn't'.");
+"Past simple 'went' takes 'didn't you?'"
+],
 
-add("English",
+[
 "The woman ___ lives next door is a doctor.",
 ["who","whom","whose","which"],
 0,
-"Use 'who' as the relative pronoun for a person functioning as the subject.");
+"'Who' is used for a person as subject."
+],
 
-add("English",
-"The man ___ I met yesterday was very kind.",
+[
+"The man ___ I met yesterday was kind.",
 ["who","whom","whose","which"],
 1,
-"With a person functioning as the object, 'whom' is the formal choice.");
+"'Whom' is the formal object pronoun for a person."
+],
 
-add("English",
-"The student ___ notebook was lost reported it to the teacher.",
+[
+"The student ___ notebook was lost reported it.",
 ["who","whom","whose","which"],
 2,
-"'Whose' expresses possession: the notebook belongs to the student.");
+"'Whose' expresses possession."
+],
 
-add("English",
-"The car ___ we bought is very reliable.",
+[
+"The car ___ we bought is reliable.",
 ["who","whom","whose","which"],
 3,
-"'Which' is used for things.");
+"'Which' is used for things."
+],
 
-add("English",
+[
 "If I had more time, I ___ another language.",
 ["learn","will learn","would learn","would have learned"],
 2,
-"This is the second conditional: if + past simple, would + base verb.");
+"Second conditional: if + past simple, would + base verb."
+],
 
-add("English",
+[
 "By next June, she ___ here for ten years.",
 ["works","will have worked","worked","has worked"],
 1,
-"Future perfect: will have + past participle.");
+"Future perfect: will have + past participle."
+],
 
-add("English",
+[
 "They were tired because they ___ all night.",
 ["had been working","have worked","will work","work"],
 0,
-"An action continuing before another past event uses the past perfect continuous.");
+"Past perfect continuous describes an ongoing action before a past point."
+],
 
-add("English",
+[
 "I wish I ___ more time.",
 ["have","had","will have","would have"],
 1,
-"After 'wish' for a present unreal situation, we commonly use the past simple: 'I wish I had more time.'");
+"For a present unreal situation: wish + past simple."
+],
 
-add("English",
+[
 "The documents ___ yesterday.",
 ["sent","were sent","are sending","have send"],
 1,
-"Passive voice in the past simple: were + past participle.");
+"Past passive: were + past participle."
+],
 
-add("English",
+[
 "To 'go the extra mile' means to :",
 ["give up","make an additional effort","walk exactly one mile","arrive late"],
 1,
-"The idiom means to make more effort than expected.");
+"It means to make an additional effort."
+],
 
-add("English",
+[
 "To 'hit the nail on the head' means to :",
 ["make a mistake","say exactly the right thing","build a house","avoid a problem"],
 1,
-"The idiom means to identify or express something exactly.");
+"It means to identify or express something exactly."
+],
 
-add("English",
+[
 "If something happens 'once in a blue moon', it happens :",
 ["very often","every day","very rarely","at night only"],
 2,
-"The idiom means very rarely.");
+"It means very rarely."
+]
 
-
-/* ============================================================
-   CULTURE GÉNÉRALE — 76 À 100
-   ============================================================ */
-
-add("Culture générale",
-"Le parc national des Virunga se trouve principalement dans quelle province de la RDC ?",
-["Nord-Kivu","Haut-Katanga","Kasaï-Central","Kwango"],
-0,
-"Le parc national des Virunga se situe dans l'est de la RDC, principalement au Nord-Kivu.");
-
-add("Culture générale",
-"Le parc national de Kahuzi-Biega est notamment connu pour la protection :",
-["Des gorilles de Grauer","Des lions du Sahara","Des pandas géants","Des kangourous"],
-0,
-"Kahuzi-Biega est particulièrement connu pour les gorilles de Grauer.");
-
-add("Culture générale",
-"Le parc national de la Garamba se trouve dans quelle province ?",
-["Haut-Uélé","Lualaba","Kongo-Central","Sud-Kivu"],
-0,
-"Le parc national de la Garamba se trouve dans le Haut-Uélé.");
-
-add("Culture générale",
-"Quel est le nom actuel de Léopoldville ?",
-["Kisangani","Kinshasa","Mbandaka","Lubumbashi"],
-1,
-"Léopoldville est devenue Kinshasa.");
-
-add("Culture générale",
-"Quel est le nom actuel d'Élisabethville ?",
-["Kolwezi","Kananga","Lubumbashi","Mbuji-Mayi"],
-2,
-"Élisabethville est devenue Lubumbashi.");
-
-add("Culture générale",
-"Quel est le nom actuel de Stanleyville ?",
-["Kisangani","Kinshasa","Mbandaka","Bunia"],
-0,
-"Stanleyville est aujourd'hui Kisangani.");
-
-add("Culture générale",
-"Quel est le nom actuel de Coquilhatville ?",
-["Mbandaka","Kikwit","Matadi","Kananga"],
-0,
-"Coquilhatville est aujourd'hui Mbandaka.");
-
-add("Culture générale",
-"Quelle est la capitale provinciale du Haut-Katanga ?",
-["Kolwezi","Lubumbashi","Likasi","Kalemie"],
-1,
-"Le chef-lieu du Haut-Katanga est Lubumbashi.");
-
-add("Culture générale",
-"Quelle est la capitale provinciale du Lualaba ?",
-["Kolwezi","Lubumbashi","Kananga","Goma"],
-0,
-"Le chef-lieu du Lualaba est Kolwezi.");
-
-add("Culture générale",
-"Quelle est la capitale provinciale du Kasaï-Central ?",
-["Mbuji-Mayi","Kananga","Tshikapa","Kikwit"],
-1,
-"Le chef-lieu du Kasaï-Central est Kananga.");
-
-add("Culture générale",
-"Le fleuve Congo se jette dans :",
-["L'océan Atlantique","L'océan Indien","La mer Méditerranée","Le lac Tanganyika"],
-0,
-"Le fleuve Congo se jette dans l'océan Atlantique.");
-
-add("Culture générale",
-"Le lac Kivu est partagé principalement entre la RDC et :",
-["La Zambie","Le Rwanda","L'Angola","Le Burundi uniquement"],
-1,
-"Le lac Kivu est partagé entre la RDC et le Rwanda.");
-
-add("Culture générale",
-"Le lac Tanganyika borde notamment la RDC et :",
-["Le Rwanda seulement","La Tanzanie","Le Ghana","Le Sénégal"],
-1,
-"Le lac Tanganyika est notamment partagé par la RDC, la Tanzanie, le Burundi et la Zambie.");
-
-add("Culture générale",
-"Quelle est la date de l'indépendance de la RDC ?",
-["30 juin 1960","1er janvier 1961","17 mai 1997","24 avril 1990"],
-0,
-"La République du Congo belge devient indépendante le 30 juin 1960.");
-
-add("Culture générale",
-"Qui fut le premier Premier ministre du Congo indépendant ?",
-["Joseph Kasa-Vubu","Patrice Lumumba","Mobutu Sese Seko","Laurent-Désiré Kabila"],
-1,
-"Patrice Lumumba fut le premier Premier ministre du Congo indépendant.");
-
-add("Culture générale",
-"Qui fut le premier président de la République du Congo indépendant ?",
-["Patrice Lumumba","Joseph Kasa-Vubu","Mobutu Sese Seko","Joseph-Désiré Mobutu"],
-1,
-"Joseph Kasa-Vubu fut le premier président.");
-
-add("Culture générale",
-"Quel nom le pays a-t-il porté à partir de 1971 ?",
-["Zaïre","Congo-Brazzaville","Katanga","Congo Oriental"],
-0,
-"Le pays a officiellement pris le nom de République du Zaïre en 1971.");
-
-add("Culture générale",
-"Quel est le siège de l'Union africaine ?",
-["Nairobi","Addis-Abeba","Kinshasa","Le Caire"],
-1,
-"Le siège de l'Union africaine se trouve à Addis-Abeba, en Éthiopie.");
-
-add("Culture générale",
-"Quel est le siège principal de l'Organisation des Nations unies ?",
-["Paris","Genève","New York","Bruxelles"],
-2,
-"Le siège principal de l'ONU est à New York.");
-
-add("Culture générale",
-"La Seconde Guerre mondiale s'est déroulée principalement entre :",
-["1914–1918","1939–1945","1945–1950","1960–1965"],
-1,
-"La Seconde Guerre mondiale s'est déroulée de 1939 à 1945.");
-
-add("Culture générale",
-"Quelle est la capitale de la République démocratique du Congo ?",
-["Lubumbashi","Kinshasa","Goma","Mbandaka"],
-1,
-"Kinshasa est la capitale de la RDC.");
-
-add("Culture générale",
-"Quelle est la monnaie officielle de la RDC ?",
-["Franc congolais","Dollar congolais","Shilling congolais","Euro congolais"],
-0,
-"La monnaie officielle de la RDC est le franc congolais.");
-
-add("Culture générale",
-"Quel est le plus grand océan de la planète ?",
-["Atlantique","Indien","Pacifique","Arctique"],
-2,
-"L'océan Pacifique est le plus vaste des océans.");
-
-add("Culture générale",
-"Quelle planète est surnommée la planète rouge ?",
-["Vénus","Mars","Jupiter","Mercure"],
-1,
-"Mars est appelée la planète rouge en raison notamment de la couleur de sa surface.");
-
-add("Culture générale",
-"Quel gaz les plantes absorbent-elles principalement lors de la photosynthèse ?",
-["Oxygène","Azote","Dioxyde de carbone","Hydrogène"],
-2,
-"Les plantes absorbent du dioxyde de carbone et utilisent la lumière pour réaliser la photosynthèse.");
-
-
-/* ============================================================
-   VÉRIFICATION
-   ============================================================ */
-
-if(questions.length !== 100){
-  console.error("ERREUR : le test ne contient pas exactement 100 questions.");
-}
-
-const expectedSubjects = [
-  "Mathématiques",
-  "Français",
-  "English",
-  "Culture générale"
 ];
 
-const subjectCounts = {};
-
-questions.forEach(q=>{
-  subjectCounts[q.subject] =
-    (subjectCounts[q.subject] || 0) + 1;
-
-  if(
-    !Array.isArray(q.options) ||
-    q.options.length !== 4 ||
-    q.answer < 0 ||
-    q.answer > 3
-  ){
-    console.error("Question mal configurée :",q);
-  }
-});
-
-console.log("Nombre de questions :",questions.length);
-console.log("Répartition :",subjectCounts);
+E.forEach(x =>
+  add(
+    "English",
+    x[0],
+    x[1],
+    x[2],
+    x[3],
+    "en"
+  )
+);
 
 
 /* ============================================================
-   ÉTAT DU TEST
+   CULTURE GÉNÉRALE — 25
    ============================================================ */
 
-let candidateName = "";
+const C = [
 
-let questionIndex = 0;
+[
+"Le parc national des Virunga se trouve principalement dans :",
+["Nord-Kivu","Haut-Katanga","Kasaï-Central","Kwango"],
+0,
+"Virunga se situe dans l’est de la RDC, principalement au Nord-Kivu."
+],
+
+[
+"Kahuzi-Biega est notamment connu pour :",
+["Les gorilles de Grauer","Les lions du Sahara","Les pandas","Les kangourous"],
+0,
+"Le parc protège notamment les gorilles de Grauer."
+],
+
+[
+"Le parc national de la Garamba se trouve dans :",
+["Haut-Uélé","Lualaba","Kongo-Central","Sud-Kivu"],
+0,
+"Garamba se trouve dans le Haut-Uélé."
+],
+
+[
+"Léopoldville est aujourd’hui :",
+["Kisangani","Kinshasa","Mbandaka","Lubumbashi"],
+1,
+"Léopoldville est devenue Kinshasa."
+],
+
+[
+"Élisabethville est aujourd’hui :",
+["Kolwezi","Kananga","Lubumbashi","Mbuji-Mayi"],
+2,
+"Élisabethville est devenue Lubumbashi."
+],
+
+[
+"Stanleyville est aujourd’hui :",
+["Kisangani","Kinshasa","Mbandaka","Bunia"],
+0,
+"Stanleyville est aujourd’hui Kisangani."
+],
+
+[
+"Coquilhatville est aujourd’hui :",
+["Mbandaka","Kikwit","Matadi","Kananga"],
+0,
+"Coquilhatville est aujourd’hui Mbandaka."
+],
+
+[
+"Chef-lieu du Haut-Katanga :",
+["Kolwezi","Lubumbashi","Likasi","Kalemie"],
+1,
+"Le chef-lieu est Lubumbashi."
+],
+
+[
+"Chef-lieu du Lualaba :",
+["Kolwezi","Lubumbashi","Kananga","Goma"],
+0,
+"Le chef-lieu est Kolwezi."
+],
+
+[
+"Chef-lieu du Kasaï-Central :",
+["Mbuji-Mayi","Kananga","Tshikapa","Kikwit"],
+1,
+"Le chef-lieu est Kananga."
+],
+
+[
+"Le fleuve Congo se jette dans :",
+["Océan Atlantique","Océan Indien","Méditerranée","Lac Tanganyika"],
+0,
+"Il se jette dans l’océan Atlantique."
+],
+
+[
+"Le lac Kivu est partagé principalement entre la RDC et :",
+["Zambie","Rwanda","Angola","Sénégal"],
+1,
+"Le lac Kivu est partagé entre la RDC et le Rwanda."
+],
+
+[
+"Le lac Tanganyika borde notamment la RDC et :",
+["Rwanda seulement","Tanzanie","Ghana","Sénégal"],
+1,
+"La Tanzanie est l’un des pays riverains."
+],
+
+[
+"Date de l’indépendance de la RDC :",
+["30 juin 1960","1er janvier 1961","17 mai 1997","24 avril 1990"],
+0,
+"La RDC devient indépendante le 30 juin 1960."
+],
+
+[
+"Premier Premier ministre du Congo indépendant :",
+["Joseph Kasa-Vubu","Patrice Lumumba","Mobutu","Laurent-Désiré Kabila"],
+1,
+"Patrice Lumumba fut le premier Premier ministre."
+],
+
+[
+"Premier président du Congo indépendant :",
+["Patrice Lumumba","Joseph Kasa-Vubu","Mobutu","Kabila"],
+1,
+"Joseph Kasa-Vubu fut le premier président."
+],
+
+[
+"Nom porté par le pays à partir de 1971 :",
+["Zaïre","Congo-Brazzaville","Katanga","Congo oriental"],
+0,
+"Le pays prit le nom de Zaïre en 1971."
+],
+
+[
+"Siège de l’Union africaine :",
+["Nairobi","Addis-Abeba","Kinshasa","Le Caire"],
+1,
+"Le siège de l’UA est à Addis-Abeba."
+],
+
+[
+"Siège principal de l’ONU :",
+["Paris","Genève","New York","Bruxelles"],
+2,
+"Le siège principal est à New York."
+],
+
+[
+"Seconde Guerre mondiale :",
+["1914–1918","1939–1945","1945–1950","1960–1965"],
+1,
+"Elle s’est déroulée de 1939 à 1945."
+],
+
+[
+"Capitale de la RDC :",
+["Lubumbashi","Kinshasa","Goma","Mbandaka"],
+1,
+"Kinshasa est la capitale."
+],
+
+[
+"Monnaie officielle de la RDC :",
+["Franc congolais","Dollar congolais","Shilling congolais","Euro congolais"],
+0,
+"La monnaie officielle est le franc congolais."
+],
+
+[
+"Le plus grand océan de la planète :",
+["Atlantique","Indien","Pacifique","Arctique"],
+2,
+"Le Pacifique est le plus vaste océan."
+],
+
+[
+"La planète rouge est :",
+["Vénus","Mars","Jupiter","Mercure"],
+1,
+"Mars est surnommée la planète rouge."
+],
+
+[
+"Gaz principalement absorbé par les plantes lors de la photosynthèse :",
+["Oxygène","Azote","Dioxyde de carbone","Hydrogène"],
+2,
+"Les plantes utilisent le dioxyde de carbone lors de la photosynthèse."
+]
+
+];
+
+C.forEach(x =>
+  add(
+    "Culture générale",
+    x[0],
+    x[1],
+    x[2],
+    x[3]
+  )
+);
+
+
+/* ============================================================
+   VÉRIFICATION AUTOMATIQUE
+   ============================================================ */
+
+if(Q.length !== 100){
+  throw new Error(
+    "ERREUR : le test contient " +
+    Q.length +
+    " questions au lieu de 100."
+  );
+}
+
+for(const q of Q){
+
+  if(
+    !Array.isArray(q.o) ||
+    q.o.length !== 4 ||
+    q.a < 0 ||
+    q.a > 3
+  ){
+    throw new Error(
+      "Question mal configurée : " +
+      q.q
+    );
+  }
+}
+
+console.log(
+  "Validation OK : " +
+  Q.length +
+  " questions."
+);
+
+
+/* ============================================================
+   ÉLÉMENTS HTML
+   ============================================================ */
+
+const home =
+  document.getElementById("home");
+
+const test =
+  document.getElementById("test");
+
+const reading =
+  document.getElementById("reading");
+
+const results =
+  document.getElementById("results");
+
+const qarea =
+  document.getElementById("qarea");
+
+const globalTimerEl =
+  document.getElementById("globalTimer");
+
+
+/* ============================================================
+   VARIABLES D'ÉTAT
+   ============================================================ */
+
+let globalTimerInterval = null;
+let questionInterval = null;
+let readingInterval = null;
+
+let candidate = "";
+
+let qIndex = 0;
 
 let phase = "home";
 
-let questionTimer = null;
-let globalTimer = null;
-let readingTimer = null;
+let selected = null;
 
-let questionRemaining = 60;
-let readingRemaining = 900;
+let currentChoices = [];
 
-let testStartTime = null;
+let answers = Array(100).fill(null);
+
+let testStart = 0;
+
 let testFinished = false;
-
-let antiCheatIncidents = 0;
-
-let answers = [];
-
-let currentShuffledAnswers = [];
-
-let currentReading = null;
-
-
-/* ============================================================
-   ÉLÉMENTS
-   ============================================================ */
-
-const home = document.getElementById("home");
-const test = document.getElementById("test");
-const reading = document.getElementById("reading");
-const results = document.getElementById("results");
-
-const questionArea = document.getElementById("questionArea");
-
-const candidateNameInput =
-  document.getElementById("candidateName");
-
-const candidateBadge =
-  document.getElementById("candidateBadge");
-
-const globalTimer =
-  document.getElementById("globalTimer");
-
-const progressText =
-  document.getElementById("progressText");
-
-const subjectText =
-  document.getElementById("subjectText");
-
-const progressBar =
-  document.getElementById("progressBar");
-
-const readingTitle =
-  document.getElementById("readingTitle");
-
-const readingBody =
-  document.getElementById("readingBody");
-
-const readingClock =
-  document.getElementById("readingClock");
-
-const skipReading =
-  document.getElementById("skipReading");
-
-const modal =
-  document.getElementById("modal");
-
-const modalTitle =
-  document.getElementById("modalTitle");
-
-const modalBody =
-  document.getElementById("modalBody");
-
-const warning =
-  document.getElementById("warning");
 
 
 /* ============================================================
    UTILITAIRES
    ============================================================ */
 
-function formatTime(seconds){
+function fmt(seconds){
 
-  seconds = Math.max(0,Math.floor(seconds));
+  seconds =
+    Math.max(
+      0,
+      Math.floor(seconds)
+    );
 
-  const h = Math.floor(seconds/3600);
+  return (
+    String(
+      Math.floor(seconds / 60)
+    ).padStart(2,"0")
+    +
+    ":"
+    +
+    String(
+      seconds % 60
+    ).padStart(2,"0")
+  );
+}
 
-  const m = Math.floor((seconds%3600)/60);
 
-  const s = seconds%60;
+function esc(text){
 
-  if(h > 0){
-    return String(h).padStart(2,"0")
-      +":"+String(m).padStart(2,"0")
-      +":"+String(s).padStart(2,"0");
-  }
-
-  return String(m).padStart(2,"0")
-    +":"+String(s).padStart(2,"0");
+  return String(text)
+    .replace(
+      /[&<>"']/g,
+      char => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+      }[char])
+    );
 }
 
 
@@ -1978,41 +1907,27 @@ function shuffle(array){
 
   const copy = [...array];
 
-  for(let i=copy.length-1;i>0;i--){
+  for(
+    let i = copy.length - 1;
+    i > 0;
+    i--
+  ){
 
-    const j = Math.floor(Math.random()*(i+1));
+    const j =
+      Math.floor(
+        Math.random() * (i + 1)
+      );
 
-    [copy[i],copy[j]] =
-      [copy[j],copy[i]];
+    [
+      copy[i],
+      copy[j]
+    ] = [
+      copy[j],
+      copy[i]
+    ];
   }
 
   return copy;
-}
-
-
-function escapeHTML(str){
-
-  return String(str)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
-
-function subjectStart(index){
-
-  if(index < 25)
-    return "Mathématiques";
-
-  if(index < 50)
-    return "Français";
-
-  if(index < 75)
-    return "English";
-
-  return "Culture générale";
 }
 
 
@@ -2020,97 +1935,131 @@ function subjectStart(index){
    DÉMARRAGE
    ============================================================ */
 
-document.getElementById("startBtn")
-.addEventListener("click",startTest);
+document
+  .getElementById("start")
+  .addEventListener(
+    "click",
+    startTest
+  );
 
-candidateNameInput
-.addEventListener("keydown",e=>{
-  if(e.key==="Enter") startTest();
-});
+
+document
+  .getElementById("name")
+  .addEventListener(
+    "keydown",
+    event => {
+
+      if(event.key === "Enter"){
+        startTest();
+      }
+
+    }
+  );
 
 
 function startTest(){
 
-  const name =
-    candidateNameInput.value.trim();
+  candidate =
+    document
+      .getElementById("name")
+      .value
+      .trim();
 
-  if(!name){
+  if(!candidate){
 
-    alert("Veuillez entrer le nom complet du candidat.");
+    alert(
+      "Veuillez entrer le nom complet du candidat."
+    );
 
-    candidateNameInput.focus();
+    document
+      .getElementById("name")
+      .focus();
 
     return;
   }
 
-  candidateName = name;
-
-  candidateBadge.textContent = candidateName;
 
   home.classList.add("hidden");
 
   test.classList.remove("hidden");
 
-  questionIndex = 0;
+  results.classList.add("hidden");
 
-  answers = [];
+  qIndex = 0;
 
-  antiCheatIncidents = 0;
+  answers =
+    Array(100).fill(null);
 
   testFinished = false;
 
-  testStartTime = Date.now();
-
   phase = "questions";
+
+  testStart = Date.now();
 
   startGlobalTimer();
 
-  showQuestion();
+  history.pushState(
+    null,
+    "",
+    location.href
+  );
 
-  history.pushState(null,"",location.href);
+  renderQuestion();
 }
 
 
 /* ============================================================
-   TIMER GLOBAL
+   MINUTEUR GLOBAL
    ============================================================ */
 
 function startGlobalTimer(){
 
-  clearInterval(globalTimer);
+  clearInterval(
+    globalTimerInterval
+  );
 
-  globalTimer =
-    setInterval(()=>{
+  globalTimerInterval =
+    setInterval(
+      () => {
 
-      if(!testStartTime || testFinished)
-        return;
+        if(
+          !testStart ||
+          testFinished
+        ){
+          return;
+        }
 
-      const elapsed =
-        Math.floor(
-          (Date.now()-testStartTime)/1000
-        );
+        const elapsed =
+          (Date.now() - testStart) / 1000;
 
-      globalTimer.textContent =
-        formatTime(elapsed);
+        globalTimerEl.textContent =
+          fmt(elapsed);
 
-    },1000);
+      },
+      1000
+    );
 }
 
 
 /* ============================================================
-   QUESTIONS
+   AFFICHAGE QUESTION
    ============================================================ */
 
-function showQuestion(){
+function renderQuestion(){
 
-  clearInterval(questionTimer);
+  clearInterval(
+    questionInterval
+  );
 
-  const q = questions[questionIndex];
+  if(qIndex >= 100){
 
-  if(!q){
     finishTest();
+
     return;
   }
+
+
+  const q = Q[qIndex];
 
   phase = "questions";
 
@@ -2118,64 +2067,89 @@ function showQuestion(){
 
   test.classList.remove("hidden");
 
-  const total = questions.length;
+  selected = null;
 
-  progressText.textContent =
-    `Question ${questionIndex+1} / ${total}`;
 
-  subjectText.textContent =
-    q.subject;
-
-  progressBar.style.width =
-    `${((questionIndex+1)/total)*100}%`;
-
-  /*
-    Mélange des réponses sans perdre la bonne réponse.
-  */
-
-  currentShuffledAnswers =
+  currentChoices =
     shuffle(
-      q.options.map((text,index)=>({
-        text,
-        correct:index===q.answer
-      }))
+      q.o.map(
+        (text,index) => ({
+          text:text,
+          correct:index === q.a
+        })
+      )
     );
 
-  questionArea.innerHTML = `
-    <div class="question-card">
 
-      <div class="subject-label">
-        ${escapeHTML(q.subject)}
+  document
+    .getElementById("progress")
+    .textContent =
+      `Question ${qIndex + 1} / 100`;
+
+
+  document
+    .getElementById("subject")
+    .textContent =
+      q.s;
+
+
+  document
+    .getElementById("bar")
+    .style.width =
+      `${qIndex + 1}%`;
+
+
+  qarea.innerHTML = `
+
+    <div class="card qcard">
+
+      <span class="tag">
+        ${esc(q.s)}
+      </span>
+
+      <div class="qnum">
+        QUESTION ${qIndex + 1}
       </div>
 
-      <div class="question-number">
-        QUESTION ${questionIndex+1}
+      <div class="question">
+        ${esc(q.q)}
       </div>
 
-      <div class="question-text">
-        ${escapeHTML(q.question)}
-      </div>
+      <div
+        id="answers"
+        class="answers"
+      ></div>
 
-      <div class="answers" id="answers"></div>
+      <div class="foot">
 
-      <div class="question-footer">
-
-        <div class="question-time">
-          Temps restant :
-          <strong id="questionClock">01:00</strong>
-        </div>
+        <span
+          id="qclock"
+          style="
+            font-weight:800;
+            color:var(--muted)
+          "
+        >
+          01:00
+        </span>
 
         ${
-          q.reading
-          ? `<button class="review-btn" id="reviewText">
-               📖 Revoir le texte
-             </button>`
-          : ""
+          q.r
+          ?
+          `
+          <button
+            id="review"
+            class="review"
+          >
+            📖 Revoir le texte
+          </button>
+          `
+          :
+          ""
         }
 
         <button
-          class="next-btn"
-          id="nextBtn"
+          id="next"
+          class="next"
           disabled
         >
           VALIDER →
@@ -2184,105 +2158,158 @@ function showQuestion(){
       </div>
 
     </div>
+
   `;
 
-  const answersContainer =
+
+  const answerBox =
     document.getElementById("answers");
 
-  currentShuffledAnswers.forEach(
-    (answer,index)=>{
 
-      const btn =
+  currentChoices.forEach(
+    (choice,index) => {
+
+      const button =
         document.createElement("button");
 
-      btn.className = "answer";
+      button.className =
+        "answer";
 
-      btn.innerHTML = `
-        <span class="answer-letter">
-          ${String.fromCharCode(65+index)}
+      button.innerHTML = `
+
+        <span class="letter">
+          ${String.fromCharCode(65 + index)}
         </span>
 
-        <span class="answer-text">
-          ${escapeHTML(answer.text)}
+        <span>
+          ${esc(choice.text)}
         </span>
+
       `;
 
-      btn.addEventListener(
+      button.addEventListener(
         "click",
-        ()=>selectAnswer(index)
+        () => selectAnswer(index)
       );
 
-      answersContainer.appendChild(btn);
+      answerBox.appendChild(
+        button
+      );
+
     }
   );
 
-  const nextBtn =
-    document.getElementById("nextBtn");
 
-  nextBtn.addEventListener(
-    "click",
-    validateAnswer
-  );
-
-  if(q.reading){
+  if(q.r){
 
     document
-      .getElementById("reviewText")
+      .getElementById("review")
       .addEventListener(
         "click",
-        ()=>openReadingModal(q.reading)
+        () => openReading(q.r)
       );
+
   }
 
-  questionRemaining = 60;
 
-  updateQuestionClock();
+  document
+    .getElementById("next")
+    .addEventListener(
+      "click",
+      validateAnswer
+    );
 
-  questionTimer =
-    setInterval(()=>{
 
-      questionRemaining--;
+  let remaining = 60;
 
-      updateQuestionClock();
 
-      if(questionRemaining <= 0){
+  questionInterval =
+    setInterval(
+      () => {
 
-        clearInterval(questionTimer);
+        remaining--;
 
-        autoValidate();
-      }
+        const clock =
+          document
+            .getElementById("qclock");
 
-    },1000);
+        if(clock){
+
+          clock.textContent =
+            fmt(remaining);
+
+          if(remaining <= 10){
+
+            clock.style.color =
+              "var(--danger)";
+          }
+        }
+
+
+        if(remaining <= 0){
+
+          clearInterval(
+            questionInterval
+          );
+
+          saveAnswer(
+            selected
+          );
+
+          nextPhase();
+        }
+
+      },
+      1000
+    );
 }
 
 
 /* ============================================================
-   SÉLECTION
+   SÉLECTION RÉPONSE
    ============================================================ */
-
-let selectedAnswer = null;
 
 function selectAnswer(index){
 
-  selectedAnswer = index;
+  selected = index;
+
 
   document
     .querySelectorAll(".answer")
-    .forEach((btn,i)=>{
+    .forEach(
+      (button,number) => {
 
-      btn.style.borderColor =
-        i===index
-        ? "var(--blue)"
-        : "var(--border)";
+        button.classList.toggle(
+          "selected",
+          number === index
+        );
 
-      btn.style.background =
-        i===index
-        ? "#eff6ff"
-        : "white";
-    });
+      }
+    );
 
-  document.getElementById("nextBtn")
+
+  document
+    .getElementById("next")
     .disabled = false;
+}
+
+
+/* ============================================================
+   SAUVEGARDE
+   ============================================================ */
+
+function saveAnswer(index){
+
+  if(index === null){
+
+    answers[qIndex] = null;
+
+    return;
+  }
+
+
+  answers[qIndex] =
+    currentChoices[index];
 }
 
 
@@ -2292,122 +2319,75 @@ function selectAnswer(index){
 
 function validateAnswer(){
 
-  if(selectedAnswer === null)
+  if(selected === null){
+
     return;
-
-  clearInterval(questionTimer);
-
-  saveAnswer(selectedAnswer);
-
-  moveToNextPhase();
-}
-
-
-function autoValidate(){
-
-  if(selectedAnswer === null){
-
-    saveAnswer(null);
-
-  }else{
-
-    saveAnswer(selectedAnswer);
   }
 
-  moveToNextPhase();
-}
+
+  clearInterval(
+    questionInterval
+  );
 
 
-function saveAnswer(value){
+  saveAnswer(
+    selected
+  );
 
-  answers[questionIndex] = value;
+
+  nextPhase();
 }
 
 
 /* ============================================================
-   PASSAGE À LA QUESTION / LECTURE
+   TRANSITIONS
    ============================================================ */
 
-function moveToNextPhase(){
-
-  selectedAnswer = null;
+function nextPhase(){
 
   /*
-    Question 25 terminée → lecture française.
+    Q25 → lecture française
   */
 
-  if(questionIndex === 24){
+  if(qIndex === 24){
 
-    questionIndex++;
+    qIndex = 25;
 
     showReading("fr");
 
     return;
   }
 
+
   /*
-    Question 50 terminée → lecture anglaise.
+    Q50 → lecture anglaise
   */
 
-  if(questionIndex === 49){
+  if(qIndex === 49){
 
-    questionIndex++;
+    qIndex = 50;
 
     showReading("en");
 
     return;
   }
 
-  /*
-    Question 75 terminée → culture générale.
-  */
-
-  if(questionIndex === 74){
-
-    questionIndex++;
-
-    showQuestion();
-
-    return;
-  }
 
   /*
-    Question 100 terminée.
+    Q100 → résultats
   */
 
-  if(questionIndex === 99){
+  if(qIndex === 99){
 
     finishTest();
 
     return;
   }
 
-  questionIndex++;
 
-  showQuestion();
-}
+  qIndex++;
 
-
-/* ============================================================
-   HORLOGE QUESTION
-   ============================================================ */
-
-function updateQuestionClock(){
-
-  const clock =
-    document.getElementById("questionClock");
-
-  if(clock){
-
-    clock.textContent =
-      formatTime(questionRemaining);
-
-    if(questionRemaining <= 10){
-
-      clock.style.color =
-        "var(--danger)";
-    }
-  }
+  renderQuestion();
 }
 
 
@@ -2417,127 +2397,194 @@ function updateQuestionClock(){
 
 function showReading(language){
 
-  clearInterval(questionTimer);
+  clearInterval(
+    readingInterval
+  );
 
-  clearInterval(readingTimer);
 
   phase = "reading";
-
-  currentReading = language;
 
   test.classList.add("hidden");
 
   reading.classList.remove("hidden");
 
+
   const data =
-    language==="fr"
-    ? FR_TEXT
-    : EN_TEXT;
+    language === "fr"
+    ? FR
+    : EN;
 
-  readingTitle.textContent =
-    language==="fr"
-    ? "Lecture française — 15 minutes"
-    : "English Reading — 15 minutes";
 
-  readingBody.innerHTML =
-    `<h3>${escapeHTML(data.title)}</h3>`+
-    data.paragraphs
-      .map(p=>`<p>${escapeHTML(p)}</p>`)
-      .join("");
+  document
+    .getElementById("readTitle")
+    .textContent =
+      language === "fr"
+      ?
+      "Lecture française — 15 minutes"
+      :
+      "English Reading — 15 minutes";
 
-  readingRemaining = 900;
 
-  updateReadingClock();
+  document
+    .getElementById("readBody")
+    .innerHTML =
 
-  readingTimer =
-    setInterval(()=>{
+      `<h3>
+        ${esc(data.title)}
+      </h3>`
 
-      readingRemaining--;
+      +
 
-      updateReadingClock();
+      data.p
+        .map(
+          paragraph =>
+            `<p>
+              ${esc(paragraph)}
+            </p>`
+        )
+        .join("");
 
-      if(readingRemaining <= 0){
 
-        clearInterval(readingTimer);
+  let remaining = 900;
 
-        continueAfterReading();
-      }
 
-    },1000);
+  document
+    .getElementById("readClock")
+    .textContent =
+      fmt(remaining);
+
+
+  readingInterval =
+    setInterval(
+      () => {
+
+        remaining--;
+
+        document
+          .getElementById("readClock")
+          .textContent =
+            fmt(remaining);
+
+
+        if(remaining <= 0){
+
+          clearInterval(
+            readingInterval
+          );
+
+          continueReading();
+        }
+
+      },
+      1000
+    );
+
+
+  document
+    .getElementById("skip")
+    .onclick =
+      continueReading;
 }
 
 
-function updateReadingClock(){
+/* ============================================================
+   FIN LECTURE
+   ============================================================ */
 
-  readingClock.textContent =
-    formatTime(readingRemaining);
-}
+function continueReading(){
 
-
-skipReading.addEventListener(
-  "click",
-  continueAfterReading
-);
-
-
-function continueAfterReading(){
-
-  clearInterval(readingTimer);
+  clearInterval(
+    readingInterval
+  );
 
   reading.classList.add("hidden");
 
   test.classList.remove("hidden");
 
   /*
-    Après la lecture française :
-    questionIndex = 25 → Q26.
+    Si qIndex = 25 :
+    on affiche Q26.
 
-    Après la lecture anglaise :
-    questionIndex = 50 → Q51.
+    Si qIndex = 50 :
+    on affiche Q51.
   */
 
-  showQuestion();
+  renderQuestion();
 }
 
 
 /* ============================================================
-   MODAL REVOIR LE TEXTE
+   REVOIR LE TEXTE
    ============================================================ */
 
-function openReadingModal(language){
+function openReading(language){
 
   const data =
-    language==="fr"
-    ? FR_TEXT
-    : EN_TEXT;
+    language === "fr"
+    ? FR
+    : EN;
 
-  modalTitle.textContent =
-    data.title;
 
-  modalBody.innerHTML =
-    data.paragraphs
-      .map(p=>`<p>${escapeHTML(p)}</p>`)
-      .join("");
+  document
+    .getElementById("modalTitle")
+    .textContent =
+      data.title;
 
-  modal.classList.remove("hidden");
+
+  document
+    .getElementById("modalBody")
+    .innerHTML =
+      data.p
+        .map(
+          paragraph =>
+            `<p>
+              ${esc(paragraph)}
+            </p>`
+        )
+        .join("");
+
+
+  document
+    .getElementById("modal")
+    .classList
+    .remove("hidden");
 }
 
 
-document.getElementById("closeModal")
-.addEventListener(
-  "click",
-  ()=>modal.classList.add("hidden")
-);
+document
+  .getElementById("close")
+  .addEventListener(
+    "click",
+    () => {
+
+      document
+        .getElementById("modal")
+        .classList
+        .add("hidden");
+
+    }
+  );
 
 
-modal.addEventListener("click",e=>{
+document
+  .getElementById("modal")
+  .addEventListener(
+    "click",
+    event => {
 
-  if(e.target===modal){
+      if(
+        event.target ===
+        document.getElementById("modal")
+      ){
 
-    modal.classList.add("hidden");
-  }
+        document
+          .getElementById("modal")
+          .classList
+          .add("hidden");
+      }
 
-});
+    }
+  );
 
 
 /* ============================================================
@@ -2546,24 +2593,44 @@ modal.addEventListener("click",e=>{
 
 function finishTest(){
 
-  if(testFinished)
+  if(testFinished){
+
     return;
+  }
+
 
   testFinished = true;
 
   phase = "finished";
 
-  clearInterval(questionTimer);
-  clearInterval(readingTimer);
-  clearInterval(globalTimer);
+
+  clearInterval(
+    questionInterval
+  );
+
+  clearInterval(
+    readingInterval
+  );
+
+  clearInterval(
+    globalTimerInterval
+  );
+
 
   test.classList.add("hidden");
+
   reading.classList.add("hidden");
-  modal.classList.add("hidden");
+
+  document
+    .getElementById("modal")
+    .classList
+    .add("hidden");
+
 
   results.classList.remove("hidden");
 
-  generateResults();
+
+  renderResults();
 }
 
 
@@ -2571,134 +2638,110 @@ function finishTest(){
    RÉSULTATS
    ============================================================ */
 
-function generateResults(){
+function renderResults(){
 
   let correct = 0;
+
   let wrong = 0;
+
   let skipped = 0;
+
 
   const bySubject = {};
 
-  questions.forEach((q,i)=>{
 
-    if(!bySubject[q.subject]){
+  Q.forEach(
+    (question,index) => {
 
-      bySubject[q.subject] = {
-        correct:0,
-        total:0
-      };
+      if(!bySubject[question.s]){
+
+        bySubject[question.s] = {
+          correct:0,
+          total:0
+        };
+
+      }
+
+
+      bySubject[question.s].total++;
+
+
+      const answer =
+        answers[index];
+
+
+      if(
+        answer === null ||
+        answer === undefined
+      ){
+
+        skipped++;
+
+        return;
+      }
+
+
+      if(answer.correct){
+
+        correct++;
+
+        bySubject[
+          question.s
+        ].correct++;
+
+      }else{
+
+        wrong++;
+      }
+
     }
+  );
 
-    bySubject[q.subject].total++;
-
-    const userAnswer =
-      answers[i];
-
-    if(userAnswer === null ||
-       userAnswer === undefined){
-
-      skipped++;
-
-      return;
-    }
-
-    if(
-      currentAnswerIsCorrect(q,userAnswer,i)
-    ){
-
-      correct++;
-
-      bySubject[q.subject].correct++;
-
-    }else{
-
-      wrong++;
-    }
-
-  });
-
-  /*
-    answers[i] contient l'index de la réponse
-    dans le tableau mélangé au moment de la question.
-    On conserve donc le texte choisi pour pouvoir
-    comparer correctement dans les résultats.
-  */
-
-  correct = 0;
-  wrong = 0;
-  skipped = 0;
-
-  const finalBySubject = {};
-
-  questions.forEach((q,i)=>{
-
-    if(!finalBySubject[q.subject]){
-
-      finalBySubject[q.subject] = {
-        correct:0,
-        total:0
-      };
-    }
-
-    finalBySubject[q.subject].total++;
-
-    const saved = answers[i];
-
-    if(saved === null || saved === undefined){
-
-      skipped++;
-
-      return;
-    }
-
-    /*
-      Chaque réponse sauvegardée possède désormais
-      directement la propriété "correct".
-    */
-
-    if(saved.correct){
-
-      correct++;
-
-      finalBySubject[q.subject].correct++;
-
-    }else{
-
-      wrong++;
-    }
-
-  });
 
   const percentage =
-    Math.round((correct/100)*100);
+    correct;
 
-  document.getElementById("resultCandidate")
+
+  document
+    .getElementById("resultName")
     .textContent =
-      candidateName;
+      candidate;
 
-  document.getElementById("finalScore")
+
+  document
+    .getElementById("score")
     .textContent =
-      `${percentage}%`;
+      percentage + "%";
 
-  document.getElementById("correctCount")
-    .textContent = correct;
 
-  document.getElementById("wrongCount")
-    .textContent = wrong;
-
-  document.getElementById("skippedCount")
-    .textContent = skipped;
-
-  const elapsed =
-    Math.floor(
-      (Date.now()-testStartTime)/1000
-    );
-
-  document.getElementById("timeSpent")
+  document
+    .getElementById("correct")
     .textContent =
-      formatTime(elapsed);
+      correct;
 
-  let message = "";
+
+  document
+    .getElementById("wrong")
+    .textContent =
+      wrong;
+
+
+  document
+    .getElementById("skipped")
+    .textContent =
+      skipped;
+
+
+  document
+    .getElementById("spent")
+    .textContent =
+      fmt(
+        (Date.now() - testStart) / 1000
+      );
+
+
+  let message;
+
 
   if(percentage >= 90){
 
@@ -2713,7 +2756,7 @@ function generateResults(){
   }else if(percentage >= 60){
 
     message =
-      "Bon travail. Quelques points importants restent à consolider.";
+      "Bon travail. Quelques points restent à consolider.";
 
   }else if(percentage >= 50){
 
@@ -2726,174 +2769,134 @@ function generateResults(){
       "Il faut reprendre les bases et retravailler les erreurs.";
   }
 
-  document.getElementById("resultMessage")
-    .textContent = message;
 
-  renderSubjectResults(finalBySubject);
+  document
+    .getElementById("message")
+    .textContent =
+      message;
+
+
+  document
+    .getElementById("subjects")
+    .innerHTML =
+
+      Object
+        .entries(bySubject)
+        .map(
+          ([subject,data]) => `
+
+            <div class="subres">
+
+              <b>
+                ${data.correct}/${data.total}
+              </b>
+
+              <small>
+                ${esc(subject)}
+              </small>
+
+            </div>
+
+          `
+        )
+        .join("");
+
 
   renderErrors();
 }
 
 
-function renderSubjectResults(data){
-
-  const container =
-    document.getElementById("subjectResults");
-
-  container.innerHTML = "";
-
-  expectedSubjects.forEach(subject=>{
-
-    const info =
-      data[subject] ||
-      {correct:0,total:25};
-
-    const percent =
-      Math.round(
-        info.correct/info.total*100
-      );
-
-    const div =
-      document.createElement("div");
-
-    div.className =
-      "subject-result";
-
-    div.innerHTML = `
-      <h3>${escapeHTML(subject)}</h3>
-
-      <strong>
-        ${info.correct}/${info.total}
-      </strong>
-
-      <div style="color:#64748b;margin-top:5px;">
-        ${percent}%
-      </div>
-    `;
-
-    container.appendChild(div);
-  });
-}
-
-
 /* ============================================================
-   SAUVEGARDE DES RÉPONSES
-   ============================================================ */
-
-function saveAnswer(value){
-
-  if(value === null){
-
-    answers[questionIndex] = null;
-
-    return;
-  }
-
-  const selected =
-    currentShuffledAnswers[value];
-
-  answers[questionIndex] = {
-    text:selected.text,
-    correct:selected.correct
-  };
-}
-
-
-/* ============================================================
-   CORRECTION
+   CORRECTION DÉTAILLÉE
    ============================================================ */
 
 function renderErrors(){
 
   const list =
-    document.getElementById("errorList");
+    document.getElementById(
+      "errorList"
+    );
 
-  list.innerHTML = "";
 
-  let errorNumber = 0;
+  let html = "";
 
-  questions.forEach((q,i)=>{
 
-    const saved =
-      answers[i];
+  Q.forEach(
+    (question,index) => {
 
-    const isSkipped =
-      saved === null ||
-      saved === undefined;
+      const answer =
+        answers[index];
 
-    const isCorrect =
-      !isSkipped &&
-      saved.correct;
 
-    if(isCorrect)
-      return;
+      if(
+        answer &&
+        answer.correct
+      ){
 
-    errorNumber++;
+        return;
+      }
 
-    const correctText =
-      q.options[q.answer];
 
-    const userText =
-      isSkipped
-      ? "Aucune réponse"
-      : saved.text;
+      const userAnswer =
+        answer
+        ?
+        answer.text
+        :
+        "Aucune réponse";
 
-    const div =
-      document.createElement("div");
 
-    div.className =
-      "error-item";
+      html += `
 
-    div.innerHTML = `
+        <div class="error">
 
-      <div class="error-q">
-        ${errorNumber}. Q${i+1} — ${escapeHTML(q.question)}
-      </div>
+          <b>
+            Q${index + 1} —
+            ${esc(question.q)}
+          </b>
 
-      <div class="your-answer">
-        ✘ Votre réponse :
-        <b>${escapeHTML(userText)}</b>
-      </div>
+          <div class="bad">
+            ✘ Votre réponse :
+            ${esc(userAnswer)}
+          </div>
 
-      <div class="correct-answer">
-        ✔ Bonne réponse :
-        <b>${escapeHTML(correctText)}</b>
-      </div>
+          <div class="good">
+            ✔ Bonne réponse :
+            ${esc(question.o[question.a])}
+          </div>
 
-      <div class="explanation">
-        <b>Explication :</b>
-        ${escapeHTML(q.explanation)}
-      </div>
-    `;
+          <div class="explain">
 
-    list.appendChild(div);
-  });
+            <b>Explication :</b>
 
-  if(errorNumber===0){
+            ${esc(question.e)}
 
-    list.innerHTML = `
-      <div style="
-        padding:25px;
-        background:#f0fdf4;
-        border-left:5px solid var(--green);
-        border-radius:10px;
-        color:var(--green-dark);
-        font-weight:800;
-      ">
-        🎉 Félicitations ! Toutes les réponses sont correctes.
-      </div>
+          </div>
+
+        </div>
+
+      `;
+
+    }
+  );
+
+
+  if(!html){
+
+    html = `
+
+      <p class="good">
+
+        <b>
+          🎉 Toutes les réponses sont correctes.
+        </b>
+
+      </p>
+
     `;
   }
-}
 
 
-/* ============================================================
-   FONCTION DE COMPATIBILITÉ
-   ============================================================ */
-
-function currentAnswerIsCorrect(q,userAnswer,index){
-
-  return false;
+  list.innerHTML = html;
 }
 
 
@@ -2901,12 +2904,12 @@ function currentAnswerIsCorrect(q,userAnswer,index){
    RECOMMENCER
    ============================================================ */
 
-document.getElementById("restartBtn")
-.addEventListener("click",()=>{
-
-  location.reload();
-
-});
+document
+  .getElementById("restart")
+  .addEventListener(
+    "click",
+    () => location.reload()
+  );
 
 
 /* ============================================================
@@ -2917,27 +2920,26 @@ function showCheatWarning(){
 
   if(
     testFinished ||
-    phase==="home" ||
-    phase==="finished"
+    phase === "home" ||
+    phase === "finished"
   ){
+
     return;
   }
 
-  antiCheatIncidents++;
 
-  warning.classList.remove("hidden");
+  document
+    .getElementById("warn")
+    .classList
+    .remove("hidden");
 }
 
 
 document.addEventListener(
   "visibilitychange",
-  ()=>{
+  () => {
 
-    if(
-      document.hidden &&
-      !testFinished &&
-      phase!=="home"
-    ){
+    if(document.hidden){
 
       showCheatWarning();
     }
@@ -2948,13 +2950,9 @@ document.addEventListener(
 
 window.addEventListener(
   "blur",
-  ()=>{
+  () => {
 
-    if(
-      !testFinished &&
-      phase!=="home" &&
-      !document.hidden
-    ){
+    if(!document.hidden){
 
       showCheatWarning();
     }
@@ -2963,51 +2961,70 @@ window.addEventListener(
 );
 
 
-document.getElementById("closeWarning")
-.addEventListener(
-  "click",
-  ()=>warning.classList.add("hidden")
+document
+  .getElementById("warnClose")
+  .addEventListener(
+    "click",
+    () => {
+
+      document
+        .getElementById("warn")
+        .classList
+        .add("hidden");
+
+    }
+  );
+
+
+/* ============================================================
+   BOUTON RETOUR NAVIGATEUR
+   ============================================================ */
+
+history.replaceState(
+  null,
+  "",
+  location.href
+);
+
+
+window.addEventListener(
+  "popstate",
+  () => {
+
+    if(
+      !testFinished &&
+      phase !== "home"
+    ){
+
+      history.pushState(
+        null,
+        "",
+        location.href
+      );
+
+      showCheatWarning();
+    }
+
+  }
 );
 
 
 /* ============================================================
-   BOUTON RETOUR DU NAVIGATEUR
-   ============================================================ */
-
-history.pushState(null,"",location.href);
-
-window.addEventListener("popstate",()=>{
-
-  if(
-    !testFinished &&
-    phase!=="home"
-  ){
-
-    history.pushState(null,"",location.href);
-
-    showCheatWarning();
-
-  }
-
-});
-
-
-/* ============================================================
-   EMPÊCHER LA FERMETURE ACCIDENTELLE
+   FERMETURE DE PAGE
    ============================================================ */
 
 window.addEventListener(
   "beforeunload",
-  e=>{
+  event => {
 
     if(
       !testFinished &&
-      phase!=="home"
+      phase !== "home"
     ){
 
-      e.preventDefault();
+      event.preventDefault();
 
-      e.returnValue="";
+      event.returnValue = "";
     }
 
   }
@@ -3016,4 +3033,4 @@ window.addEventListener(
 </script>
 
 </body>
-  </html>
+      </html>
