@@ -1,0 +1,3342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b20d19">
+<title>PRÉPA EXCELLENTIA WANTANSHI — TEST BLANC</title>
+
+<style>
+:root{
+  --red:#b20d19;
+  --red2:#e21c2b;
+  --black:#111318;
+  --dark:#1a1d23;
+  --gray:#69707d;
+  --light:#f4f5f7;
+  --white:#fff;
+  --green:#138a48;
+  --border:#e2e5e9;
+  --shadow:0 20px 55px rgba(0,0,0,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--light);
+  color:var(--black);
+}
+
+button,
+input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* =========================
+   ACCUEIL
+========================= */
+
+#home{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,255,255,.12),transparent 28%),
+    radial-gradient(circle at 85% 85%,rgba(255,255,255,.10),transparent 25%),
+    linear-gradient(135deg,#770812,#b20d19 50%,#790711);
+}
+
+.watermark{
+  position:absolute;
+  font-size:clamp(130px,27vw,420px);
+  font-weight:1000;
+  color:rgba(255,255,255,.035);
+  transform:rotate(-8deg);
+  user-select:none;
+  pointer-events:none;
+}
+
+.home{
+  width:min(1050px,100%);
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  background:white;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 30px 100px rgba(0,0,0,.3);
+  position:relative;
+  z-index:2;
+}
+
+.home-left{
+  padding:55px;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  background:#111318;
+  color:white;
+  padding:9px 15px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:28px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#e21c2b;
+  border-radius:50%;
+}
+
+.home h1{
+  font-size:clamp(40px,6vw,70px);
+  line-height:.95;
+  letter-spacing:-4px;
+  margin-bottom:20px;
+}
+
+.home h1 span{
+  color:var(--red);
+}
+
+.intro{
+  color:var(--gray);
+  font-size:17px;
+  line-height:1.7;
+  max-width:620px;
+  margin-bottom:35px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.stat{
+  border:1px solid var(--border);
+  padding:17px;
+  border-radius:15px;
+}
+
+.stat strong{
+  display:block;
+  color:var(--red);
+  font-size:25px;
+}
+
+.stat small{
+  color:var(--gray);
+}
+
+.home-right{
+  background:#121419;
+  color:white;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.home-right h2{
+  font-size:27px;
+  margin-bottom:8px;
+}
+
+.home-right p{
+  color:#aeb3bd;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+label{
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:8px;
+  color:#dce0e6;
+}
+
+#name{
+  width:100%;
+  padding:16px;
+  border-radius:11px;
+  border:1px solid #363a43;
+  background:#20232a;
+  color:white;
+  outline:none;
+  margin-bottom:15px;
+}
+
+#name:focus{
+  border-color:var(--red2);
+}
+
+.start{
+  border:0;
+  padding:16px;
+  border-radius:11px;
+  color:white;
+  background:var(--red);
+  font-weight:900;
+  transition:.2s;
+}
+
+.start:hover{
+  background:var(--red2);
+  transform:translateY(-2px);
+}
+
+.start:active{
+  transform:translateY(0);
+}
+
+.note{
+  color:#777d88;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:18px;
+}
+
+/* =========================
+   BARRE
+========================= */
+
+#test{
+  min-height:100vh;
+}
+
+.top{
+  height:70px;
+  background:white;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 25px;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-weight:900;
+}
+
+.brand-box{
+  width:35px;
+  height:35px;
+  background:var(--red);
+  color:white;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.pill{
+  background:#f0f1f3;
+  padding:8px 13px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.global{
+  color:var(--red);
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container{
+  width:min(1000px,calc(100% - 30px));
+  margin:30px auto;
+}
+
+.progress-head{
+  display:flex;
+  justify-content:space-between;
+  color:var(--gray);
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.progress-track{
+  height:7px;
+  background:#dfe2e6;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.progress{
+  height:100%;
+  background:linear-gradient(90deg,var(--red),var(--red2));
+  transition:.3s;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  padding:35px;
+  box-shadow:var(--shadow);
+}
+
+.question-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.qnum{
+  color:var(--red);
+  font-size:13px;
+  font-weight:900;
+}
+
+.timer{
+  background:#111318;
+  color:white;
+  padding:9px 14px;
+  border-radius:9px;
+  font-weight:900;
+  min-width:80px;
+  text-align:center;
+  font-variant-numeric:tabular-nums;
+}
+
+.timer.warn{
+  background:#a30d18;
+  animation:pulse .7s infinite alternate;
+}
+
+@keyframes pulse{
+  from{transform:scale(1)}
+  to{transform:scale(1.05)}
+}
+
+.question{
+  font-size:22px;
+  line-height:1.5;
+  font-weight:750;
+  margin-bottom:25px;
+}
+
+.options{
+  display:grid;
+  gap:11px;
+}
+
+.option{
+  width:100%;
+  border:2px solid #e5e7eb;
+  background:white;
+  border-radius:13px;
+  padding:15px;
+  display:flex;
+  gap:12px;
+  text-align:left;
+  transition:.15s;
+}
+
+.option:hover{
+  background:#fafafa;
+  border-color:#c8ccd2;
+}
+
+.option.selected{
+  border-color:var(--red);
+  background:#fff1f3;
+}
+
+.letter{
+  min-width:32px;
+  height:32px;
+  border-radius:8px;
+  background:#eef0f2;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+}
+
+.selected .letter{
+  background:var(--red);
+  color:white;
+}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:25px;
+}
+
+.next,
+.review{
+  border:0;
+  border-radius:10px;
+  padding:13px 20px;
+  font-weight:900;
+}
+
+.next{
+  background:var(--red);
+  color:white;
+}
+
+.next:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+
+.review{
+  background:#eef0f2;
+}
+
+/* =========================
+   LECTURE
+========================= */
+
+.reading{
+  width:min(1000px,calc(100% - 30px));
+  margin:30px auto;
+}
+
+.reading-head{
+  background:#111318;
+  color:white;
+  border-radius:20px 20px 0 0;
+  padding:28px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.reading-head h1{
+  font-size:25px;
+}
+
+.reading-head p{
+  color:#aeb3bd;
+  margin-top:5px;
+}
+
+.read-clock{
+  font-size:30px;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+}
+
+.read-body{
+  background:white;
+  padding:40px;
+  max-height:calc(100vh - 245px);
+  overflow:auto;
+  font-size:16px;
+  line-height:1.9;
+}
+
+.read-body p{
+  margin-bottom:18px;
+}
+
+.read-foot{
+  background:white;
+  border-top:1px solid var(--border);
+  padding:20px 30px;
+  border-radius:0 0 20px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.read-foot span{
+  color:var(--gray);
+  font-size:13px;
+}
+
+.skip{
+  background:var(--red);
+  color:white;
+  border:0;
+  padding:13px 20px;
+  border-radius:10px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-box{
+  width:min(850px,100%);
+  max-height:90vh;
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.modal-head{
+  background:#111318;
+  color:white;
+  padding:18px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.close{
+  border:0;
+  background:#30333a;
+  color:white;
+  border-radius:7px;
+  width:32px;
+  height:32px;
+  font-size:20px;
+}
+
+.modal-body{
+  padding:30px;
+  line-height:1.8;
+  overflow:auto;
+  max-height:75vh;
+}
+
+.modal-body p{
+  margin-bottom:18px;
+}
+
+/* =========================
+   RÉSULTATS
+========================= */
+
+.results{
+  width:min(1100px,calc(100% - 30px));
+  margin:35px auto 60px;
+}
+
+.hero-result{
+  background:linear-gradient(135deg,#111318,#282c35);
+  color:white;
+  border-radius:23px;
+  padding:40px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+}
+
+.hero-result h1{
+  font-size:35px;
+  margin-bottom:8px;
+}
+
+.hero-result p{
+  color:#b4b9c2;
+}
+
+.circle{
+  width:145px;
+  height:145px;
+  border:10px solid var(--red);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+}
+
+.circle strong{
+  display:block;
+  font-size:35px;
+}
+
+.circle small{
+  color:#bbb;
+}
+
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin:20px 0;
+}
+
+.box{
+  background:white;
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:15px;
+}
+
+.box small{
+  color:var(--gray);
+  display:block;
+  margin-bottom:7px;
+}
+
+.box strong{
+  font-size:27px;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.subject-box{
+  background:white;
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:15px;
+}
+
+.subject-box strong{
+  display:block;
+}
+
+.subject-score{
+  color:var(--red);
+  font-size:27px;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.error-title{
+  margin:30px 0 15px;
+}
+
+.error{
+  background:white;
+  border-left:5px solid var(--red);
+  border-radius:11px;
+  padding:18px;
+  margin-bottom:11px;
+}
+
+.error h3{
+  font-size:15px;
+  line-height:1.5;
+  margin-bottom:9px;
+}
+
+.wrong{
+  color:#a00d17;
+  margin-bottom:5px;
+}
+
+.right{
+  color:var(--green);
+  margin-bottom:8px;
+}
+
+.explain{
+  color:#626975;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.footer{
+  text-align:center;
+  color:#858b94;
+  margin-top:40px;
+  font-size:12px;
+}
+
+/* =========================
+   TRICHE
+========================= */
+
+.warning{
+  position:fixed;
+  inset:0;
+  z-index:300;
+  background:rgba(20,0,0,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.warning-card{
+  background:white;
+  width:min(450px,100%);
+  border-radius:20px;
+  padding:35px;
+  text-align:center;
+}
+
+.warning-icon{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#fff0f1;
+  color:var(--red);
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  margin:auto auto 15px;
+}
+
+.warning-card p{
+  color:var(--gray);
+  line-height:1.6;
+  margin:12px 0 20px;
+}
+
+.warning-card button{
+  background:var(--red);
+  color:white;
+  border:0;
+  padding:12px 20px;
+  border-radius:9px;
+  font-weight:900;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+  .home{
+    grid-template-columns:1fr;
+  }
+
+  .home-left,
+  .home-right{
+    padding:30px 24px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .top{
+    padding:0 14px;
+  }
+
+  .pill{
+    display:none;
+  }
+
+  .card{
+    padding:23px 17px;
+  }
+
+  .question{
+    font-size:19px;
+  }
+
+  .reading-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .read-body{
+    padding:25px 20px;
+    max-height:none;
+  }
+
+  .read-foot{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-result{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .circle{
+    margin:auto;
+  }
+
+  .result-grid,
+  .subjects{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+
+  .home h1{
+    letter-spacing:-2px;
+  }
+
+  .result-grid,
+  .subjects{
+    grid-template-columns:1fr;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .next,
+  .review{
+    width:100%;
+  }
+
+  .question{
+    font-size:18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     ACCUEIL
+===================================================== -->
+
+<section id="home">
+
+  <div class="watermark">NATHAN</div>
+
+  <div class="home">
+
+    <div class="home-left">
+
+      <div class="logo">
+        <span class="dot"></span>
+        PRÉPA EXCELLENTIA WANTANSHI
+      </div>
+
+      <h1>
+        TEST<br>
+        <span>BLANC</span><br>
+        EXCELLENTIA
+      </h1>
+
+      <p class="intro">
+        Une évaluation de haut niveau conçue pour mesurer ta maîtrise
+        des matières fondamentales, ton raisonnement et ta capacité
+        à résoudre des questions exigeantes sous pression.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>100</strong>
+          <small>questions</small>
+        </div>
+
+        <div class="stat">
+          <strong>4</strong>
+          <small>matières</small>
+        </div>
+
+        <div class="stat">
+          <strong>130 min</strong>
+          <small>maximum</small>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="home-right">
+
+      <h2>Commencer le test</h2>
+
+      <p>
+        Entre ton nom complet. Le chronomètre global commencera
+        dès le lancement de l'épreuve.
+      </p>
+
+      <label for="name">NOM COMPLET DU CANDIDAT</label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Ex. Nathan Tshik"
+        autocomplete="off"
+        maxlength="80"
+      >
+
+      <button
+        class="start"
+        id="startBtn"
+        type="button"
+      >
+        COMMENCER L'ÉVALUATION →
+      </button>
+
+      <div class="note">
+        100 questions • 25 Mathématiques • 25 Français •
+        25 English • 25 Culture générale.
+        <br><br>
+        Une seule bonne réponse par question.
+        Retour arrière désactivé pendant l'épreuve.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     TEST
+===================================================== -->
+
+<section id="test" class="hidden">
+
+  <header class="top">
+
+    <div class="brand">
+      <div class="brand-box">N</div>
+      <span>EXCELLENTIA</span>
+    </div>
+
+    <div class="top-right">
+      <div class="pill" id="subject">Mathématiques</div>
+      <div class="global" id="global">00:00:00</div>
+    </div>
+
+  </header>
+
+  <div id="content"></div>
+
+</section>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div id="modal" class="modal hidden">
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+      <strong id="modalTitle">Texte</strong>
+
+      <button
+        class="close"
+        id="closeModalBtn"
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="modal-body" id="modalBody"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     WARNING
+===================================================== -->
+
+<div id="warning" class="warning hidden">
+
+  <div class="warning-card">
+
+    <div class="warning-icon">!</div>
+
+    <h2>Tentative de triche détectée</h2>
+
+    <p>
+      Le système a détecté que tu as quitté la page ou changé
+      d'onglet pendant l'épreuve.
+    </p>
+
+    <button
+      id="closeWarningBtn"
+      type="button"
+    >
+      REPRENDRE LE TEST
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+"use strict";
+
+/* =====================================================
+   TEXTES
+===================================================== */
+
+const frenchText = `
+Dans les villes qui grandissent trop vite, certaines traces du passé
+disparaissent sans bruit. Elles ne sont ni détruites par une explosion
+ni effacées en une seule journée. Elles s'érodent lentement, au rythme
+des constructions nouvelles, des routes élargies et des habitudes qui
+changent. Pourtant, il arrive qu'un lieu apparemment insignifiant
+révèle, lorsqu'on l'observe avec suffisamment d'attention, une partie
+essentielle de l'histoire d'une société.
+
+À l'extrémité d'une ancienne ville minière se trouvait autrefois une
+gare dont presque personne ne parlait plus. Le bâtiment, construit
+pendant la période coloniale, avait cessé d'accueillir les voyageurs
+depuis plusieurs décennies. Ses murs étaient couverts de poussière,
+les rails avaient disparu sous les herbes et les fenêtres cassées
+laissaient entrer la pluie. Pour la majorité des habitants, il ne
+s'agissait plus que d'une ruine encombrante.
+
+Un matin, une restauratrice de documents appelée Salomé Kanza entra
+dans la gare à la recherche d'archives. Elle travaillait sur
+l'histoire industrielle de la région et avait entendu dire que
+d'anciens registres y étaient encore conservés. Elle s'attendait à
+trouver quelques papiers détériorés. Elle découvrit beaucoup plus.
+
+Dans une pièce obscure, derrière une armoire renversée, reposaient
+des dizaines de carnets. Certains appartenaient à des ingénieurs,
+d'autres à des conducteurs de train, à des mécaniciens ou à des
+employés administratifs. Les cahiers racontaient des accidents, des
+grèves, des départs, des retards, mais aussi des événements ordinaires
+que les documents officiels avaient complètement ignorés.
+
+Salomé comprit alors que l'histoire d'une ville ne se trouvait pas
+seulement dans les décisions prises par les gouvernements ou dans les
+discours prononcés par les personnalités célèbres. Elle se cachait
+également dans les gestes anonymes de ceux qui avaient fait fonctionner
+la société.
+
+Un carnet attira particulièrement son attention. Il avait été écrit
+par un mécanicien nommé Augustin. Contrairement aux autres employés,
+Augustin ne décrivait presque jamais les machines. Il observait les
+personnes. Il racontait les adieux sur les quais, les marchandises
+abandonnées, les familles qui attendaient des nouvelles et les
+silences qui suivaient les départs.
+
+Une phrase revenait régulièrement sous sa plume : « Une ville n'est
+pas faite seulement de bâtiments ; elle est faite de ce que les hommes
+y ont vécu. »
+
+Salomé aurait pu considérer cette phrase comme une simple réflexion
+personnelle. Pourtant, plus elle avançait dans les carnets, plus elle
+constatait qu'elle résumait parfaitement le contenu des archives.
+Derrière chaque registre administratif se trouvait une multitude
+d'existences invisibles.
+
+Elle décida donc de proposer à la municipalité un projet de
+restauration. Son idée ne consistait pas à transformer la gare en
+monument figé, destiné uniquement aux touristes. Elle voulait en faire
+un centre consacré à la mémoire urbaine, dans lequel les archives
+seraient accessibles au public et où les habitants pourraient déposer
+leurs propres photographies, lettres et récits.
+
+La proposition fut accueillie avec scepticisme. Certains responsables
+estimaient qu'il existait des priorités plus urgentes. Une gare
+abandonnée, disaient-ils, ne pouvait pas rivaliser avec les besoins
+d'une ville confrontée au chômage, aux difficultés de transport et au
+manque d'infrastructures.
+
+Salomé ne contestait pas ces problèmes. Elle refusait simplement
+l'idée selon laquelle la mémoire devait toujours attendre que tout le
+reste soit réglé. Elle soutenait qu'une collectivité qui ne sait plus
+d'où elle vient risque de prendre des décisions sans comprendre les
+conséquences de ses choix.
+
+Le débat aurait probablement disparu sans l'intervention inattendue
+d'une ancienne habitante. À quatre-vingt-deux ans, Madeleine Ilunga
+apporta une boîte contenant plusieurs lettres écrites par son père,
+ancien conducteur de train. Les lettres décrivaient une grève oubliée
+et les négociations qui avaient permis d'éviter un affrontement
+violent.
+
+Les documents furent authentifiés. Ils révélèrent que certains faits
+présentés depuis des années comme des épisodes sans importance avaient
+en réalité influencé les relations sociales de la ville.
+
+L'opinion changea progressivement.
+
+Des familles commencèrent à rechercher leurs propres archives. Des
+anciens travailleurs revinrent sur les lieux. Des chercheurs proposèrent
+leur aide. Même certains responsables municipaux, d'abord réticents,
+reconnurent que la gare représentait quelque chose de plus précieux
+qu'ils ne l'avaient imaginé.
+
+La restauration dura deux ans.
+
+On conserva volontairement certaines marques du temps : une partie
+des murs resta visible, quelques anciennes inscriptions furent
+protégées et un morceau de rail fut installé dans la cour intérieure.
+Mais l'ensemble fut adapté aux besoins contemporains. Les anciennes
+salles devinrent des espaces d'archives, de consultation et
+d'exposition.
+
+Lorsque le centre ouvrit finalement ses portes, Salomé refusa de
+prononcer un discours triomphal. Elle déclara simplement que le projet
+n'avait pas consisté à glorifier le passé. Il s'agissait plutôt
+d'empêcher le présent de devenir amnésique.
+
+Cette formule surprit les journalistes. Pourtant, elle résumait le
+sens profond de l'entreprise. Préserver la mémoire ne signifie pas
+vivre dans la nostalgie. Cela signifie donner aux générations futures
+les moyens de comprendre les choix qui ont construit leur environnement.
+
+Quelques années plus tard, d'autres quartiers commencèrent à mener
+des projets similaires. Des archives familiales furent numérisées,
+des témoignages enregistrés et des photographies restaurées. La ville
+découvrit progressivement qu'elle possédait une richesse qui n'apparaissait
+dans aucun bilan économique.
+
+La vieille gare n'était donc plus une ruine.
+
+Elle était devenue un lieu où le temps semblait dialoguer avec le
+présent. Les visiteurs y apprenaient certes des dates et des faits,
+mais ils découvraient surtout que l'histoire n'est jamais entièrement
+écrite par les vainqueurs, les gouvernements ou les grands personnages.
+Elle est aussi constituée par la multitude des vies ordinaires dont
+les traces, lorsqu'elles sont conservées, permettent à une société de
+se reconnaître elle-même.
+`;
+
+const englishText = `
+THE CLOCKMAKER OF THE DESERT
+
+At the edge of a vast desert stood a small town that had once been
+famous for its mechanical clocks. Long before smartphones and digital
+devices became common, travellers crossed the town because its
+clockmakers were considered among the finest in the region.
+
+By the beginning of the twenty-first century, however, almost nobody
+wanted mechanical clocks anymore.
+
+One of the last people still repairing them was an elderly woman
+named Miriam Cole. Her workshop was hidden behind a narrow blue door
+in an old market street. Inside, hundreds of tiny gears filled wooden
+drawers. Some clocks were more than a century old.
+
+Miriam did not repair clocks because she expected to become rich.
+She simply believed that a machine deserved to be understood before
+it was thrown away.
+
+One summer, a severe sandstorm struck the town. The electricity
+failed for several days, communication networks stopped working and
+many modern devices became useless.
+
+But Miriam's clocks continued to function.
+
+She began using them to help residents coordinate their movements.
+One clock was placed near the market, another near the medical centre,
+and a third at the town's main water station.
+
+The idea seemed old-fashioned, but it worked.
+
+A journalist who happened to be visiting the town wrote an article
+about Miriam. Within weeks, people from different countries became
+interested in her workshop.
+
+Miriam received offers to sell her collection. Some companies wanted
+to turn the workshop into a luxury tourist attraction. She refused.
+
+Instead, she proposed something unusual: a public workshop where
+young artisans could learn how mechanical devices worked.
+
+At first, the project attracted almost nobody. People thought that
+repairing old clocks was a dying profession.
+
+Miriam, however, was determined.
+
+She often told visitors that technology was not a competition between
+old and new. According to her, the important question was whether
+people understood the tools they depended on.
+
+Gradually, the workshop became popular.
+
+Visitors came to watch the clockmakers work. Engineers began studying
+the old mechanisms. Artists used the gears in sculptures. Even
+technology companies sent researchers to examine the precision of the
+historic designs.
+
+The workshop had become a bridge between generations.
+
+One afternoon, a young engineer named Daniel asked Miriam why she
+had refused to sell the collection.
+
+She smiled and replied, "Because once something belongs only to a
+private collector, it can disappear from public memory."
+
+Daniel understood the point.
+
+The workshop was not valuable because the clocks were old. It was
+valuable because the knowledge behind them was still alive.
+
+Years later, the desert town became known for something completely
+different from what its founders had imagined. It became a place where
+traditional craftsmanship and modern engineering met.
+
+Miriam never considered herself a revolutionary. She simply believed
+that sometimes the future can be found by looking carefully at what
+the past has left behind.
+`;
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+const Q = [];
+
+function add(subject, question, options, answer, explanation, extra = {}){
+  Q.push({
+    subject,
+    question,
+    options,
+    answer,
+    explanation,
+    ...extra
+  });
+}
+
+
+/* =====================================================
+   MATHÉMATIQUES — 25
+===================================================== */
+
+add(
+  "Mathématiques",
+  "Réduire l'expression 2(3x−4)−3(x+2)+5.",
+  ["3x−9","3x−3","9x−9","3x+9"],
+  0,
+  "6x−8−3x−6+5=3x−9.",
+  {topic:"Calcul littéral"}
+);
+
+add(
+  "Mathématiques",
+  "Le reste de la division de P(x)=2x³−x²+3x−5 par x−2 est :",
+  ["−1","3","9","13"],
+  3,
+  "Par le théorème du reste, P(2)=16−4+6−5=13.",
+  {topic:"Polynômes"}
+);
+
+add(
+  "Mathématiques",
+  "Factoriser complètement x³−4x.",
+  ["x(x−4)","x(x−2)(x+2)","(x−4)(x+1)","x²(x−4)"],
+  1,
+  "x³−4x=x(x²−4)=x(x−2)(x+2).",
+  {topic:"Factorisation"}
+);
+
+add(
+  "Mathématiques",
+  "Pour −3<x<2, le signe de (x+3)(x−2) est :",
+  ["Positif","Négatif","Nul","Toujours positif"],
+  1,
+  "Le premier facteur est positif et le second négatif : le produit est négatif.",
+  {topic:"Signes"}
+);
+
+add(
+  "Mathématiques",
+  "Quelle est la condition d'existence de (x+1)/(x²−9) ?",
+  ["x≠3 uniquement","x≠−3 uniquement","x≠−3 et x≠3","x>3"],
+  2,
+  "x²−9=(x−3)(x+3), donc le dénominateur ne doit pas être nul.",
+  {topic:"Expressions rationnelles"}
+);
+
+add(
+  "Mathématiques",
+  "Le domaine de définition de f(x)=√(5−2x) est :",
+  ["]−∞;5/2]","[5/2;+∞[","]−∞;−5/2]","R"],
+  0,
+  "Il faut 5−2x≥0, donc x≤5/2.",
+  {topic:"Fonctions et domaine"}
+);
+
+add(
+  "Mathématiques",
+  "Le domaine de définition de f(x)=ln(2x−6) est :",
+  ["x≥3","x>3","x<3","R"],
+  1,
+  "Un logarithme exige un argument strictement positif : 2x−6>0.",
+  {topic:"Fonctions et domaine"}
+);
+
+add(
+  "Mathématiques",
+  "lim(x→+∞) (5x²−2x+1)/(2x²+7) vaut :",
+  ["0","2","5/2","+∞"],
+  2,
+  "Les degrés sont égaux : la limite est le rapport 5/2.",
+  {topic:"Limites"}
+);
+
+add(
+  "Mathématiques",
+  "Pour f(x)=3+2/(x−4), l'asymptote horizontale est :",
+  ["x=4","y=4","y=3","x=3"],
+  2,
+  "Quand x tend vers ±∞, 2/(x−4) tend vers 0, donc y=3.",
+  {topic:"Asymptotes"}
+);
+
+add(
+  "Mathématiques",
+  "Une asymptote verticale de f(x)=1/(x+5) a pour équation :",
+  ["x=5","x=−5","y=5","y=−5"],
+  1,
+  "Le dénominateur s'annule pour x=−5.",
+  {topic:"Asymptotes"}
+);
+
+add(
+  "Mathématiques",
+  "Si f(x)=x³−3x²+2, alors f'(x)= :",
+  ["3x²−6x","3x²−3x","x²−6x","3x−6"],
+  0,
+  "Dérivée terme à terme : 3x²−6x.",
+  {topic:"Dérivation"}
+);
+
+add(
+  "Mathématiques",
+  "Pour f(x)=−x²+6x−1, l'extremum est :",
+  ["Un minimum égal à −10","Un maximum égal à 8","Un maximum égal à 9","Un minimum égal à 8"],
+  1,
+  "Le sommet est en x=3 et f(3)=8. Comme a<0, c'est un maximum.",
+  {topic:"Variations et extremums"}
+);
+
+add(
+  "Mathématiques",
+  "f(x)=x²−4x+7 est décroissante sur :",
+  ["]−∞;2]","[2;+∞[","R","[−2;2]"],
+  0,
+  "f'(x)=2x−4<0 lorsque x<2.",
+  {topic:"Variations"}
+);
+
+add(
+  "Mathématiques",
+  "Dans un triangle rectangle, les deux côtés de l'angle droit mesurent 9 et 12. L'hypoténuse vaut :",
+  ["13","15","18","21"],
+  1,
+  "c²=9²+12²=225, donc c=15.",
+  {topic:"Pythagore"}
+);
+
+add(
+  "Mathématiques",
+  "Dans une configuration de Thalès, AM/AB=3/5 et AC=20. Si MN∥BC, AN vaut :",
+  ["8","10","12","15"],
+  2,
+  "AN/AC=AM/AB=3/5, donc AN=12.",
+  {topic:"Thalès"}
+);
+
+add(
+  "Mathématiques",
+  "A(−2;4) et B(3;−1). Le milieu de [AB] est :",
+  ["(1/2;3/2)","(5;3)","(−1/2;5/2)","(1;−1)"],
+  0,
+  "Milieu=((−2+3)/2;(4−1)/2)=(1/2;3/2).",
+  {topic:"Vecteurs et coordonnées"}
+);
+
+add(
+  "Mathématiques",
+  "Les vecteurs u(2;−3) et v(−4;6) sont :",
+  ["Orthogonaux","Colinéaires","De même sens","Unitaires"],
+  1,
+  "v=−2u, donc ils sont colinéaires.",
+  {topic:"Vecteurs"}
+);
+
+add(
+  "Mathématiques",
+  "Si sin(θ)=3/5 et θ est aigu, alors cos(θ)= :",
+  ["2/5","3/5","4/5","5/4"],
+  2,
+  "sin²θ+cos²θ=1, donc cosθ=4/5 pour un angle aigu.",
+  {topic:"Trigonométrie"}
+);
+
+add(
+  "Mathématiques",
+  "Dans un triangle rectangle, tan(A)= :",
+  ["hypoténuse/opposé","opposé/adjacent","adjacent/opposé","opposé/hypoténuse"],
+  1,
+  "tan(A)=côté opposé/côté adjacent.",
+  {topic:"Trigonométrie"}
+);
+
+add(
+  "Mathématiques",
+  "Une urne contient 5 rouges, 3 bleues et 2 vertes. La probabilité de tirer une boule qui n'est pas bleue est :",
+  ["3/10","7/10","1/2","4/5"],
+  1,
+  "Il y a 7 boules non bleues sur 10.",
+  {topic:"Probabilités"}
+);
+
+add(
+  "Mathématiques",
+  "On lance deux dés équilibrés. La probabilité d'obtenir une somme égale à 7 est :",
+  ["1/12","1/6","1/3","5/36"],
+  1,
+  "Il existe 6 couples favorables sur 36 : 6/36=1/6.",
+  {topic:"Probabilités"}
+);
+
+add(
+  "Mathématiques",
+  "La proposition « Si n est divisible par 4, alors n est divisible par 2 » est :",
+  ["Une implication vraie","Une implication fausse","Une équivalence","Une contradiction"],
+  0,
+  "Tout multiple de 4 est nécessairement multiple de 2.",
+  {topic:"Logique"}
+);
+
+add(
+  "Mathématiques",
+  "« x=2 » est une condition suffisante pour « x²=4 », mais est-elle nécessaire ?",
+  ["Oui, toujours","Non, car x=−2 convient aussi","Oui car x²=4 implique x=2","Impossible"],
+  1,
+  "x²=4 admet x=2 et x=−2 : x=2 n'est donc pas nécessaire.",
+  {topic:"Logique"}
+);
+
+add(
+  "Mathématiques",
+  "Une suite arithmétique vérifie u₃=11 et u₇=23. Sa raison est :",
+  ["2","3","4","6"],
+  1,
+  "u₇−u₃=4r=12, donc r=3.",
+  {topic:"Suites arithmétiques"}
+);
+
+add(
+  "Mathématiques",
+  "Une suite géométrique positive vérifie u₂=6 et u₅=162. Sa raison q vaut :",
+  ["2","3","4","6"],
+  1,
+  "u₅/u₂=q³=162/6=27, donc q=3.",
+  {topic:"Suites géométriques"}
+);
+
+
+/* =====================================================
+   ENGLISH — 25
+===================================================== */
+
+/* COMPREHENSION */
+
+add(
+  "English",
+  "Why did Miriam continue repairing mechanical clocks?",
+  ["She wanted to become famous.","She believed machines deserved to be understood.","She was forced to do it.","She hated modern technology."],
+  1,
+  "The text says she believed a machine deserved to be understood before being thrown away.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "What happened during the severe sandstorm?",
+  ["The town became richer.","Electricity and communication systems failed.","The clocks stopped.","The workshop burned down."],
+  1,
+  "The storm caused major failures in electricity and communication.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "How did Miriam's clocks become useful during the crisis?",
+  ["They predicted the weather.","They helped residents coordinate their movements.","They produced electricity.","They communicated with satellites."],
+  1,
+  "Several clocks were placed at important locations to coordinate activities.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "Why did Miriam refuse to sell her collection?",
+  ["She wanted to destroy it.","She believed it should remain part of public memory.","She disliked tourists.","She had no buyers."],
+  1,
+  "She wanted the knowledge to remain publicly accessible.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "What did Miriam propose instead of a luxury tourist attraction?",
+  ["A public workshop.","A hotel.","A shopping centre.","A private museum."],
+  0,
+  "She proposed a public workshop where young artisans could learn.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "How did the workshop eventually become important?",
+  ["Only tourists visited it.","It connected traditional craftsmanship with modern engineering.","It became a factory.","It was turned into a school."],
+  1,
+  "The workshop became a bridge between generations and technologies.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "What does the expression “a dying profession” suggest?",
+  ["A profession becoming less common.","A dangerous profession.","A highly profitable profession.","A profession that kills people."],
+  0,
+  "It means a profession that is gradually disappearing.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "Why did engineers become interested in the old clocks?",
+  ["They wanted to destroy them.","They wanted to study their precision and mechanisms.","They wanted to sell the town.","They wanted to replace Miriam."],
+  1,
+  "The text says engineers studied the mechanisms and their precision.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "What did Daniel eventually understand?",
+  ["The collection was valuable because its knowledge was alive.","Old clocks were useless.","Miriam wanted money.","Technology was dangerous."],
+  0,
+  "He understood that the knowledge behind the clocks was still alive.",
+  {type:"comprehension"}
+);
+
+add(
+  "English",
+  "What is the central idea of the story?",
+  ["The past should replace technology.","Old knowledge can contribute to the future.","Modern devices are always unreliable.","Desert towns cannot develop."],
+  1,
+  "The story argues that understanding the past can help shape the future.",
+  {type:"comprehension"}
+);
+
+
+/* LANGUAGE */
+
+add(
+  "English",
+  "Choose the correct relative pronoun: “The woman ___ repaired the clock is Miriam.”",
+  ["which","whom","who","whose"],
+  2,
+  "“Who” refers to a person and is the subject of the relative clause.",
+  {type:"language"}
+);
+
+add(
+  "English",
+  "Choose the correct relative pronoun: “The clock ___ Miriam repaired was very old.”",
+  ["who","which","whom","whose"],
+  1,
+  "“Which” refers to a thing and is the object of the relative clause.",
+  {type:"language"}
+);
+
+add(
+  "English",
+  "Choose the correct form: “The engineer ___ I met was impressed.”",
+  ["which","whom","whose","where"],
+  1,
+  "“Whom” can be used as the object for a person in formal English.",
+  {type:"language"}
+);
+
+add(
+  "English",
+  "She's a talented engineer, ___?",
+  ["isn't she","doesn't she","wasn't she","hasn't she"],
+  0,
+  "The main clause is positive with “is”, so the tag is “isn't she?”.",
+  {type:"language"}
+);
+
+add(
+  "English",
+  "They haven't finished the project, ___?",
+  ["have they","haven't they","did they","do they"],
+  0,
+  "Negative present perfect takes a positive tag: have they?",
+  {type:"language"}
+);
+
+add(
+  "English",
+  "You went there yesterday, ___?",
+  ["didn't you","don't you","haven't you","weren't you"],
+  0,
+  "Simple past takes the auxiliary did in the tag.",
+  {type:"language"}
+);
+
+add(
+  "English",
+  "What does “go the extra mile” mean?",
+  ["To give additional effort","To travel exactly one mile","To give up","To arrive late"],
+  0,
+  "It means to make more effort than expected.",
+  {type:"idiom"}
+);
+
+add(
+  "English",
+  "What does “hit the nail on the head” mean?",
+  ["To make a mistake","To be exactly right","To become angry","To repair a clock"],
+  1,
+  "It means to describe or identify something exactly.",
+  {type:"idiom"}
+);
+
+add(
+  "English",
+  "What does “once in a blue moon” mean?",
+  ["Very frequently","Very rarely","Immediately","Never"],
+  1,
+  "It means something happens very rarely.",
+  {type:"idiom"}
+);
+
+add(
+  "English",
+  "If Miriam ___ the offer, she would become rich.",
+  ["accepts","accepted","will accept","has accepted"],
+  1,
+  "Second conditional: If + past simple + would.",
+  {type:"grammar"}
+);
+
+add(
+  "English",
+  "By next year, they ___ the entire collection.",
+  ["restore","restored","will have restored","have restored"],
+  2,
+  "“By next year” commonly requires the future perfect for a completed future action.",
+  {type:"grammar"}
+);
+
+add(
+  "English",
+  "She ___ repairing clocks for twenty years before she retired.",
+  ["has been","had been","was","is"],
+  1,
+  "Past perfect continuous describes an activity continuing before another past event.",
+  {type:"grammar"}
+);
+
+add(
+  "English",
+  "Choose the correct sentence:",
+  ["I wish I know the answer.","I wish I knew the answer.","I wish I will know the answer.","I wish I had know the answer."],
+  1,
+  "Present unreal wish uses the past simple: I wish I knew.",
+  {type:"grammar"}
+);
+
+add(
+  "English",
+  "Choose the correct passive form: “People repaired the clock.”",
+  ["The clock repaired people.","The clock was repaired.","The clock has repair.","The clock is repairing."],
+  1,
+  "Simple past passive = was/were + past participle.",
+  {type:"grammar"}
+);
+
+add(
+  "English",
+  "Choose the correct sentence:",
+  ["The person whose workshop we visited was Miriam.","The person who's workshop we visited was Miriam.","The person whom workshop we visited was Miriam.","The person which workshop we visited was Miriam."],
+  0,
+  "“Whose” expresses possession: Miriam's workshop.",
+  {type:"grammar"}
+);
+
+
+/* =====================================================
+   FRANÇAIS — 25
+===================================================== */
+
+/* COMPREHENSION */
+
+add(
+  "Français",
+  "Pourquoi la vieille gare était-elle considérée comme insignifiante au début du texte ?",
+  ["Elle était trop moderne.","Elle était abandonnée et ne servait plus au transport.","Elle appartenait à Salomé.","Elle avait été transformée en musée."],
+  1,
+  "Elle était abandonnée depuis plusieurs décennies et perçue comme une ruine.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Que découvre Salomé derrière une armoire renversée ?",
+  ["Une machine industrielle.","Des carnets et archives anciennes.","De l'argent.","Une ancienne locomotive."],
+  1,
+  "Elle découvre des dizaines de carnets appartenant à différents travailleurs.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Quelle différence caractérise le carnet d'Augustin ?",
+  ["Il ne parle que de machines.","Il s'intéresse surtout aux personnes et à leur quotidien.","Il est écrit en anglais.","Il ne contient aucune observation."],
+  1,
+  "Augustin observe surtout les voyageurs, les familles et les événements humains.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Quelle conception de l'histoire Salomé finit-elle par défendre ?",
+  ["Elle est uniquement produite par les dirigeants.","Elle est constituée aussi par les vies ordinaires.","Elle ne concerne que les guerres.","Elle doit être oubliée."],
+  1,
+  "Le texte insiste sur le rôle des personnes anonymes dans la construction historique.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Pourquoi certains responsables municipaux sont-ils initialement sceptiques ?",
+  ["Ils ne savent pas lire les archives.","Ils considèrent d'autres problèmes urbains comme prioritaires.","Ils veulent détruire la gare pour des raisons historiques.","Ils refusent toute restauration."],
+  1,
+  "Le chômage, les transports et les infrastructures leur paraissent plus urgents.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Quel élément provoque un changement important dans l'opinion publique ?",
+  ["La vente de la gare.","Les lettres apportées par Madeleine Ilunga.","La disparition des archives.","Une catastrophe naturelle."],
+  1,
+  "Les lettres authentifiées révèlent l'importance d'un épisode social oublié.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Pourquoi certaines traces anciennes sont-elles volontairement conservées après la restauration ?",
+  ["Pour empêcher les visiteurs d'entrer.","Pour préserver la mémoire matérielle du lieu.","Parce que les travaux étaient impossibles.","Pour réduire le coût du projet uniquement."],
+  1,
+  "Les murs, inscriptions et rails conservés matérialisent l'histoire du lieu.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Que signifie l'expression « empêcher le présent de devenir amnésique » ?",
+  ["Empêcher les gens de dormir.","Empêcher la société d'oublier son passé.","Empêcher les médecins de travailler.","Empêcher les archives de disparaître physiquement uniquement."],
+  1,
+  "Il s'agit métaphoriquement de préserver la mémoire historique.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Quelle transformation essentielle la gare connaît-elle ?",
+  ["Elle devient un centre de mémoire et d'archives.","Elle devient une usine.","Elle devient une résidence privée.","Elle est détruite."],
+  0,
+  "Elle est transformée en centre consacré à la mémoire urbaine.",
+  {type:"comprehension"}
+);
+
+add(
+  "Français",
+  "Quelle est la thèse centrale du texte ?",
+  ["Le passé doit remplacer le présent.","La mémoire collective aide une société à comprendre son présent et son avenir.","Les ruines doivent toutes être restaurées.","Les archives économiques sont inutiles."],
+  1,
+  "Le texte défend l'idée que la mémoire permet de comprendre les choix présents et futurs.",
+  {type:"comprehension"}
+);
+
+
+/* LANGUE */
+
+add(
+  "Français",
+  "Dans « une richesse qui n'apparaissait dans aucun bilan économique », le mot « richesse » est employé :",
+  ["Au sens uniquement financier","Au sens figuré","Comme un nom propre","Comme un terme scientifique"],
+  1,
+  "Il désigne ici une richesse culturelle et mémorielle.",
+  {type:"language"}
+);
+
+add(
+  "Français",
+  "« La gare devint un lieu où le temps semblait dialoguer avec le présent » contient principalement :",
+  ["Une métaphore","Une litote","Une gradation","Une périphrase"],
+  0,
+  "Le temps est présenté comme capable de dialoguer : image métaphorique.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "« Elle ne voulait pas glorifier le passé, mais empêcher le présent de devenir amnésique » repose notamment sur :",
+  ["Une antithèse","Une comparaison","Une hyperbole numérique","Une onomatopée"],
+  0,
+  "Le passé et le présent sont mis en opposition.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "Quelle figure trouve-t-on dans « une obscure clarté » ?",
+  ["Chiasme","Oxymore","Anaphore","Métonymie"],
+  1,
+  "Deux termes contradictoires sont associés.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "« Ce n'est pas mauvais » pour signifier « c'est plutôt bon » constitue une :",
+  ["Hyperbole","Litote","Antithèse","Personnification"],
+  1,
+  "La litote exprime une idée forte par une formulation atténuée.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "« Paris s'est réveillé » pour désigner les habitants de Paris constitue une :",
+  ["Métonymie","Gradation","Chiasme","Allitération"],
+  0,
+  "Le lieu désigne les personnes qui l'habitent : métonymie.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "Quelle proposition est correctement orthographiée ?",
+  ["Malgrès les difficultés","Malgré les difficultés","Malgrés les difficultés","Mal gré les difficultés"],
+  1,
+  "La forme correcte est « malgré ».",
+  {type:"orthographe"}
+);
+
+add(
+  "Français",
+  "Complétez : « Les lettres qu'elle a ___ hier sont authentiques. »",
+  ["retrouvé","retrouvées","retrouvés","retrouvée"],
+  1,
+  "Le COD « les lettres » est placé avant le participe passé : retrouvées.",
+  {type:"grammaire"}
+);
+
+add(
+  "Français",
+  "Dans « Bien qu'il soit tard, nous continuerons », « bien que » introduit :",
+  ["Un indicatif obligatoire","Un subjonctif","Un infinitif","Un conditionnel"],
+  1,
+  "« Bien que » est suivi du subjonctif.",
+  {type:"grammaire"}
+);
+
+add(
+  "Français",
+  "Le verbe « eût compris » est au :",
+  ["Plus-que-parfait de l'indicatif","Passé antérieur","Plus-que-parfait du subjonctif","Conditionnel passé"],
+  2,
+  "« eût compris » est le plus-que-parfait du subjonctif.",
+  {type:"conjugaison"}
+);
+
+add(
+  "Français",
+  "Dans « Si j'avais su, je serais venu », la proposition introduite par « si » exprime :",
+  ["Une condition irréelle du passé","Une certitude","Une conséquence actuelle","Une comparaison"],
+  0,
+  "Si + plus-que-parfait et conditionnel passé expriment une hypothèse irréalisée dans le passé.",
+  {type:"grammaire"}
+);
+
+add(
+  "Français",
+  "Quelle phrase contient un chiasme ?",
+  ["Il faut manger pour vivre et non vivre pour manger.","Le soleil brille.","La ville grandit rapidement.","Les archives sont anciennes."],
+  0,
+  "Organisation croisée ABBA : manger/vivre puis vivre/manger.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "Quelle phrase contient une anaphore ?",
+  ["Je veux comprendre, je veux apprendre, je veux progresser.","La gare est ancienne.","Les murs sont rouges.","Il arrive demain."],
+  0,
+  "« Je veux » est répété en début de plusieurs groupes.",
+  {type:"figure"}
+);
+
+add(
+  "Français",
+  "Quel mot est un adverbe dans « Il travaille particulièrement bien » ?",
+  ["travaille","particulièrement","bien","il"],
+  1,
+  "« particulièrement » est un adverbe.",
+  {type:"vocabulaire"}
+);
+
+add(
+  "Français",
+  "Quel terme est le plus proche de « pérenne » ?",
+  ["Fragile","Durable","Immédiat","Éphémère"],
+  1,
+  "Pérenne signifie durable, qui se maintient dans le temps.",
+  {type:"vocabulaire"}
+);
+
+
+/* =====================================================
+   CULTURE GÉNÉRALE — 25
+===================================================== */
+
+add(
+  "Culture générale",
+  "Le parc national des Virunga se trouve principalement dans quelle province de la RDC ?",
+  ["Nord-Kivu","Kasaï","Haut-Uélé","Lualaba"],
+  0,
+  "Le parc des Virunga est situé dans l'est de la RDC, principalement au Nord-Kivu."
+);
+
+add(
+  "Culture générale",
+  "Le parc national de Kahuzi-Biega est particulièrement célèbre pour :",
+  ["Les gorilles de Grauer","Les lions du Katanga","Les girafes","Les manchots"],
+  0,
+  "Kahuzi-Biega est un important habitat du gorille de Grauer."
+);
+
+add(
+  "Culture générale",
+  "Le parc national de Garamba se situe principalement dans :",
+  ["Sud-Kivu","Haut-Uélé","Kongo-Central","Tanganyika"],
+  1,
+  "Garamba se situe dans le nord-est de la RDC, dans le Haut-Uélé."
+);
+
+add(
+  "Culture générale",
+  "Quel ancien nom colonial correspond à l'actuelle Kinshasa ?",
+  ["Stanleyville","Léopoldville","Élisabethville","Coquilhatville"],
+  1,
+  "Kinshasa fut appelée Léopoldville pendant la période coloniale."
+);
+
+add(
+  "Culture générale",
+  "Quelle ville portait autrefois le nom d'Élisabethville ?",
+  ["Lubumbashi","Kisangani","Mbandaka","Kananga"],
+  0,
+  "Élisabethville est l'ancien nom colonial de Lubumbashi."
+);
+
+add(
+  "Culture générale",
+  "Stanleyville correspond à l'actuelle ville de :",
+  ["Bukavu","Kisangani","Goma","Kolwezi"],
+  1,
+  "Stanleyville est l'ancien nom de Kisangani."
+);
+
+add(
+  "Culture générale",
+  "Coquilhatville correspond à l'actuelle :",
+  ["Mbandaka","Likasi","Kananga","Bunia"],
+  0,
+  "Mbandaka était appelée Coquilhatville."
+);
+
+add(
+  "Culture générale",
+  "Quel est le chef-lieu du Haut-Katanga ?",
+  ["Kolwezi","Lubumbashi","Likasi","Kipushi"],
+  1,
+  "Lubumbashi est le chef-lieu du Haut-Katanga."
+);
+
+add(
+  "Culture générale",
+  "Quel est le chef-lieu du Lualaba ?",
+  ["Lubumbashi","Kolwezi","Goma","Kananga"],
+  1,
+  "Kolwezi est le chef-lieu du Lualaba."
+);
+
+add(
+  "Culture générale",
+  "Quel est le chef-lieu du Kasaï-Central ?",
+  ["Tshikapa","Kananga","Mbuji-Mayi","Kabinda"],
+  1,
+  "Kananga est le chef-lieu du Kasaï-Central."
+);
+
+add(
+  "Culture générale",
+  "Le fleuve Congo se jette dans :",
+  ["L'océan Indien","L'océan Atlantique","La mer Méditerranée","Le golfe d'Aden"],
+  1,
+  "Le fleuve Congo se jette dans l'océan Atlantique."
+);
+
+add(
+  "Culture générale",
+  "Le lac Kivu est partagé principalement entre la RDC et :",
+  ["La Zambie","Le Rwanda","L'Ouganda","Le Burundi uniquement"],
+  1,
+  "Le lac Kivu se trouve à la frontière entre la RDC et le Rwanda."
+);
+
+add(
+  "Culture générale",
+  "Lequel de ces pays n'est pas riverain du lac Tanganyika ?",
+  ["RDC","Tanzanie","Burundi","Rwanda"],
+  3,
+  "Le Rwanda n'est pas riverain du lac Tanganyika."
+);
+
+add(
+  "Culture générale",
+  "La RDC a accédé à l'indépendance le :",
+  ["30 juin 1958","30 juin 1960","1er juillet 1960","17 janvier 1961"],
+  1,
+  "L'indépendance de la RDC fut proclamée le 30 juin 1960."
+);
+
+add(
+  "Culture générale",
+  "Qui fut le premier Premier ministre du Congo indépendant ?",
+  ["Joseph Kasa-Vubu","Patrice Lumumba","Mobutu","Moïse Tshombe"],
+  1,
+  "Patrice Lumumba fut le premier Premier ministre du Congo indépendant."
+);
+
+add(
+  "Culture générale",
+  "Qui fut le premier président de la République du Congo indépendant ?",
+  ["Patrice Lumumba","Joseph Kasa-Vubu","Mobutu","Laurent-Désiré Kabila"],
+  1,
+  "Joseph Kasa-Vubu fut le premier président."
+);
+
+add(
+  "Culture générale",
+  "En 1971, la République démocratique du Congo prit officiellement le nom de :",
+  ["Congo populaire","Zaïre","Congo fédéral","République du Congo"],
+  1,
+  "Le pays prit le nom de Zaïre sous Mobutu."
+);
+
+add(
+  "Culture générale",
+  "Le siège de l'Union africaine se trouve à :",
+  ["Nairobi","Addis-Abeba","Lagos","Le Caire"],
+  1,
+  "Le siège de l'Union africaine est à Addis-Abeba."
+);
+
+add(
+  "Culture générale",
+  "Le siège principal de l'Organisation des Nations unies se trouve à :",
+  ["Genève","New York","Paris","Bruxelles"],
+  1,
+  "Le siège principal de l'ONU est à New York."
+);
+
+add(
+  "Culture générale",
+  "La Seconde Guerre mondiale s'est déroulée principalement de :",
+  ["1914 à 1918","1939 à 1945","1945 à 1950","1935 à 1940"],
+  1,
+  "La Seconde Guerre mondiale s'étend de 1939 à 1945."
+);
+
+add(
+  "Culture générale",
+  "Le 5 octobre 2026, des facilitateurs de l'Union africaine se sont rendus à Goma principalement pour :",
+  ["Une compétition sportive","Des consultations liées au processus de paix en RDC","Une réunion minière","Une conférence scolaire"],
+  1,
+  "Une délégation du Panel des facilitateurs de l'UA s'est rendue à Goma dans le cadre des efforts de paix dans l'Est de la RDC."
+);
+
+add(
+  "Culture générale",
+  "Qui figurait parmi les personnalités africaines de haut niveau de cette mission de facilitateurs à Goma en octobre 2026 ?",
+  ["Uhuru Kenyatta","Nelson Mandela","Kofi Annan","Haile Selassie"],
+  0,
+  "Uhuru Kenyatta faisait partie de la délégation mentionnée."
+);
+
+add(
+  "Culture générale",
+  "La 8e réunion de coordination de mi-année de l'Union africaine, des CER et mécanismes régionaux s'est tenue le 4 octobre 2026 à :",
+  ["Dakar","El-Alamein","Addis-Abeba","Lusaka"],
+  1,
+  "La réunion s'est tenue à El-Alamein, en Égypte."
+);
+
+add(
+  "Culture générale",
+  "Début octobre 2026, l'Union africaine a appelé notamment quels pays à faire preuve de retenue face à des tensions régionales ?",
+  ["Éthiopie, Érythrée et Égypte","RDC, Angola et Zambie","Kenya, Tanzanie et Ouganda","Ghana, Nigeria et Sénégal"],
+  0,
+  "La Commission de l'UA a appelé l'Éthiopie, l'Érythrée et l'Égypte à éviter les actions ou discours susceptibles d'aggraver les tensions."
+);
+
+add(
+  "Culture générale",
+  "Quel enjeu économique mondial était mis en avant début octobre 2026 par la direction du FMI parmi les risques pour la croissance ?",
+  ["La disparition totale du commerce","Les prix élevés de l'énergie, la dette et les risques liés à l'IA","La fin de l'agriculture mondiale","La suppression des monnaies nationales"],
+  1,
+  "Les risques cités comprenaient notamment le choc énergétique, l'endettement élevé et certains risques liés à l'IA."
+);
+
+
+/* =====================================================
+   ÉTAT DU TEST
+===================================================== */
+
+let index = 0;
+let candidate = "";
+let selected = null;
+
+let questionTimer = null;
+let readingTimer = null;
+let globalTimer = null;
+
+let startTime = 0;
+
+let answers = [];
+
+let readingTimers = {
+  Français:false,
+  English:false
+};
+
+let optionsNow = [];
+
+let cheatingIncidents = 0;
+
+let testStarted = false;
+let testFinished = false;
+
+const texts = {
+  Français:frenchText,
+  English:englishText
+};
+
+
+/* =====================================================
+   OUTILS
+===================================================== */
+
+function formatTime(seconds){
+
+  const s = Math.max(0, Math.floor(seconds));
+
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+
+  return (
+    String(h).padStart(2,"0") + ":" +
+    String(m).padStart(2,"0") + ":" +
+    String(sec).padStart(2,"0")
+  );
+}
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function shuffle(array){
+
+  const copy = [...array];
+
+  for(let i = copy.length - 1; i > 0; i--){
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [copy[i],copy[j]] = [copy[j],copy[i]];
+  }
+
+  return copy;
+}
+
+function paragraphs(text){
+
+  return text
+    .trim()
+    .split(/\n\s*\n/)
+    .map(p => `<p>${escapeHTML(p)}</p>`)
+    .join("");
+}
+
+
+/* =====================================================
+   DÉMARRAGE
+===================================================== */
+
+function startTest(){
+
+  const nameInput = document.getElementById("name");
+
+  if(!nameInput){
+    console.error("Champ nom introuvable.");
+    return;
+  }
+
+  candidate = nameInput.value.trim();
+
+  if(!candidate){
+
+    nameInput.focus();
+
+    alert("Veuillez entrer votre nom complet.");
+
+    return;
+  }
+
+  if(Q.length !== 100){
+
+    console.error("Nombre de questions :",Q.length);
+
+    alert(
+      "Erreur : le test doit contenir exactement 100 questions.\n\n" +
+      "Questions actuellement présentes : " + Q.length
+    );
+
+    return;
+  }
+
+  testStarted = true;
+  testFinished = false;
+
+  index = 0;
+  selected = null;
+  answers = [];
+  optionsNow = [];
+  cheatingIncidents = 0;
+
+  readingTimers = {
+    Français:false,
+    English:false
+  };
+
+  clearInterval(questionTimer);
+  clearInterval(readingTimer);
+  clearInterval(globalTimer);
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("test").classList.remove("hidden");
+
+  startTime = Date.now();
+
+  history.pushState(
+    {test:true},
+    "",
+    location.href
+  );
+
+  globalTimer = setInterval(updateGlobal,1000);
+
+  render();
+}
+
+
+/* =====================================================
+   TEMPS GLOBAL
+===================================================== */
+
+function updateGlobal(){
+
+  if(!testStarted || testFinished){
+    return;
+  }
+
+  const elapsed = Math.floor(
+    (Date.now() - startTime) / 1000
+  );
+
+  const global = document.getElementById("global");
+
+  if(global){
+    global.textContent = formatTime(elapsed);
+  }
+}
+
+
+/* =====================================================
+   LECTURE
+===================================================== */
+
+function render(){
+
+  clearInterval(questionTimer);
+  clearInterval(readingTimer);
+
+  if(index === 25 && !readingTimers.Français){
+
+    reading("Français");
+
+    return;
+  }
+
+  if(index === 50 && !readingTimers.English){
+
+    reading("English");
+
+    return;
+  }
+
+  showQuestion();
+}
+
+
+function reading(subject){
+
+  clearInterval(readingTimer);
+
+  let remaining = 900;
+
+  const subjectElement = document.getElementById("subject");
+
+  if(subjectElement){
+
+    subjectElement.textContent =
+      subject === "Français"
+      ? "Lecture — Français"
+      : "Reading — English";
+  }
+
+  const title =
+    subject === "Français"
+    ? "LECTURE — FRANÇAIS"
+    : "READING — ENGLISH";
+
+  document.getElementById("content").innerHTML = `
+
+    <div class="reading">
+
+      <div class="reading-head">
+
+        <div>
+          <h1>${title}</h1>
+          <p>
+            Lecture recommandée avant les questions.
+          </p>
+        </div>
+
+        <div class="read-clock" id="readClock">
+          15:00
+        </div>
+
+      </div>
+
+      <article class="read-body">
+        ${paragraphs(texts[subject])}
+      </article>
+
+      <div class="read-foot">
+
+        <span>
+          Tu peux passer aux questions immédiatement.
+          Le temps réellement passé sera conservé dans le temps total.
+        </span>
+
+        <button
+          class="skip"
+          id="skipReadingBtn"
+          type="button"
+        >
+          PASSER AUX QUESTIONS →
+        </button>
+
+      </div>
+
+    </div>
+  `;
+
+  readingTimers[subject] = true;
+
+  document
+    .getElementById("skipReadingBtn")
+    .addEventListener("click",function(){
+
+      endReading(subject);
+
+    });
+
+  readingTimer = setInterval(function(){
+
+    remaining--;
+
+    const clock = document.getElementById("readClock");
+
+    if(clock){
+
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+
+      clock.textContent =
+        String(minutes).padStart(2,"0") +
+        ":" +
+        String(seconds).padStart(2,"0");
+    }
+
+    if(remaining <= 0){
+
+      endReading(subject);
+    }
+
+  },1000);
+}
+
+
+function endReading(subject){
+
+  clearInterval(readingTimer);
+
+  readingTimers[subject] = true;
+
+  render();
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+function showQuestion(){
+
+  clearInterval(questionTimer);
+
+  const q = Q[index];
+
+  if(!q){
+
+    finish();
+
+    return;
+  }
+
+  const subjectElement = document.getElementById("subject");
+
+  if(subjectElement){
+    subjectElement.textContent = q.subject;
+  }
+
+  const shuffled = shuffle(
+    q.options.map(function(text,i){
+
+      return {
+        text:text,
+        correct:i === q.answer
+      };
+
+    })
+  );
+
+  optionsNow = shuffled;
+
+  selected = null;
+
+  const progress =
+    ((index + 1) / 100) * 100;
+
+  const canReview =
+    q.subject === "Français" ||
+    q.subject === "English";
+
+  document.getElementById("content").innerHTML = `
+
+    <div class="container">
+
+      <div class="progress-head">
+
+        <span>${escapeHTML(q.subject)}</span>
+
+        <span>
+          ${index + 1} / 100
+        </span>
+
+      </div>
+
+      <div class="progress-track">
+
+        <div
+          class="progress"
+          style="width:${progress}%"
+        ></div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="question-top">
+
+          <div class="qnum">
+            QUESTION ${index + 1}
+          </div>
+
+          <div class="timer" id="timer">
+            01:00
+          </div>
+
+        </div>
+
+        <div class="question">
+          ${escapeHTML(q.question)}
+        </div>
+
+        <div class="options">
+
+          ${shuffled.map(function(o,i){
+
+            return `
+              <button
+                class="option"
+                id="opt${i}"
+                type="button"
+                data-option="${i}"
+              >
+
+                <span class="letter">
+                  ${String.fromCharCode(65+i)}
+                </span>
+
+                <span>
+                  ${escapeHTML(o.text)}
+                </span>
+
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <div class="actions">
+
+          ${
+            canReview
+            ?
+            `
+              <button
+                class="review"
+                id="reviewBtn"
+                type="button"
+              >
+                👁 REVOIR LE TEXTE
+              </button>
+            `
+            :
+            ""
+          }
+
+          <button
+            class="next"
+            id="next"
+            type="button"
+            disabled
+          >
+            ${index === 99 ? "TERMINER" : "SUIVANT →"}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+  document
+    .querySelectorAll(".option")
+    .forEach(function(button){
+
+      button.addEventListener("click",function(){
+
+        choose(
+          Number(button.dataset.option)
+        );
+
+      });
+
+    });
+
+  document
+    .getElementById("next")
+    .addEventListener("click",nextQuestion);
+
+  const reviewBtn =
+    document.getElementById("reviewBtn");
+
+  if(reviewBtn){
+
+    reviewBtn.addEventListener(
+      "click",
+      function(){
+
+        openText(q.subject);
+
+      }
+    );
+  }
+
+  startQuestionTimer();
+}
+
+
+/* =====================================================
+   TIMER QUESTION
+===================================================== */
+
+function startQuestionTimer(){
+
+  clearInterval(questionTimer);
+
+  let remaining = 60;
+
+  const timerElement =
+    document.getElementById("timer");
+
+  if(timerElement){
+    timerElement.textContent = "01:00";
+  }
+
+  questionTimer = setInterval(function(){
+
+    remaining--;
+
+    const el =
+      document.getElementById("timer");
+
+    if(el){
+
+      el.textContent =
+        "00:" +
+        String(remaining).padStart(2,"0");
+
+      if(remaining <= 10){
+        el.classList.add("warn");
+      }
+    }
+
+    if(remaining <= 0){
+
+      clearInterval(questionTimer);
+
+      saveAnswer();
+
+      if(index < 99){
+
+        index++;
+
+        render();
+
+      }else{
+
+        finish();
+      }
+    }
+
+  },1000);
+}
+
+
+/* =====================================================
+   CHOIX
+===================================================== */
+
+function choose(i){
+
+  if(i < 0 || i >= optionsNow.length){
+    return;
+  }
+
+  selected = i;
+
+  document
+    .querySelectorAll(".option")
+    .forEach(function(button){
+
+      button.classList.remove("selected");
+
+    });
+
+  const chosenButton =
+    document.getElementById("opt" + i);
+
+  if(chosenButton){
+    chosenButton.classList.add("selected");
+  }
+
+  const nextButton =
+    document.getElementById("next");
+
+  if(nextButton){
+    nextButton.disabled = false;
+  }
+}
+
+
+/* =====================================================
+   SAUVEGARDE
+===================================================== */
+
+function saveAnswer(){
+
+  if(selected === null){
+
+    answers[index] = {
+      text:"Aucune réponse",
+      correct:false
+    };
+
+    return;
+  }
+
+  const chosen =
+    optionsNow[selected];
+
+  if(!chosen){
+
+    answers[index] = {
+      text:"Aucune réponse",
+      correct:false
+    };
+
+    return;
+  }
+
+  answers[index] = {
+    text:chosen.text,
+    correct:chosen.correct
+  };
+}
+
+
+/* =====================================================
+   QUESTION SUIVANTE
+===================================================== */
+
+function nextQuestion(){
+
+  clearInterval(questionTimer);
+
+  saveAnswer();
+
+  if(index === 99){
+
+    finish();
+
+    return;
+  }
+
+  index++;
+
+  render();
+}
+
+
+/* =====================================================
+   TEXTE
+===================================================== */
+
+function openText(subject){
+
+  const modal =
+    document.getElementById("modal");
+
+  const title =
+    document.getElementById("modalTitle");
+
+  const body =
+    document.getElementById("modalBody");
+
+  title.textContent =
+    subject === "Français"
+    ? "Texte — Français"
+    : "Text — English";
+
+  body.innerHTML =
+    paragraphs(texts[subject]);
+
+  modal.classList.remove("hidden");
+}
+
+
+function closeModal(){
+
+  document
+    .getElementById("modal")
+    .classList.add("hidden");
+}
+
+
+/* =====================================================
+   FIN DU TEST
+===================================================== */
+
+function finish(){
+
+  if(testFinished){
+    return;
+  }
+
+  testFinished = true;
+
+  clearInterval(questionTimer);
+  clearInterval(readingTimer);
+  clearInterval(globalTimer);
+
+  const totalQuestions = Q.length;
+
+  let total = 0;
+
+  const scores = {
+    "Mathématiques":0,
+    "Français":0,
+    "English":0,
+    "Culture générale":0
+  };
+
+  const errors = [];
+
+  Q.forEach(function(q,i){
+
+    const result = answers[i];
+
+    if(result && result.correct){
+
+      total++;
+
+      scores[q.subject]++;
+
+    }else{
+
+      errors.push({
+
+        number:i + 1,
+
+        subject:q.subject,
+
+        question:q.question,
+
+        user:
+          result
+          ? result.text
+          : "Aucune réponse",
+
+        correct:q.options[q.answer],
+
+        explanation:q.explanation
+      });
+    }
+
+  });
+
+  const elapsed =
+    Math.floor(
+      (Date.now() - startTime) / 1000
+    );
+
+  showResults(
+    total,
+    scores,
+    errors,
+    elapsed
+  );
+}
+
+
+/* =====================================================
+   RÉSULTATS
+===================================================== */
+
+function showResults(
+  total,
+  scores,
+  errors,
+  elapsed
+){
+
+  const subjectElement =
+    document.getElementById("subject");
+
+  if(subjectElement){
+    subjectElement.textContent = "Résultats";
+  }
+
+  const percentage =
+    Math.round((total / 100) * 100);
+
+  document.getElementById("content").innerHTML = `
+
+    <div class="results">
+
+      <div class="hero-result">
+
+        <div>
+
+          <h1>
+            Épreuve terminée
+          </h1>
+
+          <p>
+            ${escapeHTML(candidate)}, voici ton bilan.
+          </p>
+
+        </div>
+
+        <div class="circle">
+
+          <div>
+
+            <strong>
+              ${percentage}%
+            </strong>
+
+            <small>
+              ${total}/100
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-grid">
+
+        <div class="box">
+
+          <small>
+            SCORE
+          </small>
+
+          <strong>
+            ${total}/100
+          </strong>
+
+        </div>
+
+
+        <div class="box">
+
+          <small>
+            POURCENTAGE
+          </small>
+
+          <strong>
+            ${percentage}%
+          </strong>
+
+        </div>
+
+
+        <div class="box">
+
+          <small>
+            ERREURS
+          </small>
+
+          <strong>
+            ${100-total}
+          </strong>
+
+        </div>
+
+
+        <div class="box">
+
+          <small>
+            TEMPS UTILISÉ
+          </small>
+
+          <strong style="font-size:20px">
+            ${formatTime(elapsed)}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <h2 style="margin:30px 0 15px">
+        Résultats par matière
+      </h2>
+
+
+      <div class="subjects">
+
+        ${Object.entries(scores).map(function(entry){
+
+          const subject = entry[0];
+          const score = entry[1];
+
+          return `
+
+            <div class="subject-box">
+
+              <strong>
+                ${escapeHTML(subject)}
+              </strong>
+
+              <div class="subject-score">
+                ${score}/25
+              </div>
+
+              <small>
+                ${score * 4}%
+              </small>
+
+            </div>
+
+          `;
+
+        }).join("")}
+
+      </div>
+
+
+      <h2 class="error-title">
+        Correction détaillée
+      </h2>
+
+
+      ${
+        errors.length === 0
+
+        ?
+
+        `
+          <div class="box">
+
+            <h3 style="color:#138a48">
+              EXCELLENT — 100/100
+            </h3>
+
+            <p style="margin-top:8px;color:#69707d">
+              Toutes les réponses sont correctes.
+            </p>
+
+          </div>
+        `
+
+        :
+
+        errors.map(function(e){
+
+          return `
+
+            <div class="error">
+
+              <h3>
+                Question ${e.number}
+                — ${escapeHTML(e.subject)}
+              </h3>
+
+              <p style="margin-bottom:9px">
+                ${escapeHTML(e.question)}
+              </p>
+
+              <div class="wrong">
+
+                ✕ Ta réponse :
+                <strong>
+                  ${escapeHTML(e.user)}
+                </strong>
+
+              </div>
+
+              <div class="right">
+
+                ✓ Bonne réponse :
+                <strong>
+                  ${escapeHTML(e.correct)}
+                </strong>
+
+              </div>
+
+              <div class="explain">
+
+                <strong>
+                  Explication :
+                </strong>
+
+                ${escapeHTML(e.explanation)}
+
+              </div>
+
+            </div>
+
+          `;
+
+        }).join("")
+      }
+
+
+      <div class="footer">
+
+        TEST BLANC EXCELLENTIA WANTANSHI
+        • by Nathan
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+/* =====================================================
+   SÉCURITÉ / ANTI-TRICHE
+===================================================== */
+
+document.addEventListener(
+  "visibilitychange",
+  function(){
+
+    if(
+      document.visibilityState === "hidden" &&
+      testStarted &&
+      !testFinished
+    ){
+
+      cheatingIncidents++;
+
+      const warning =
+        document.getElementById("warning");
+
+      warning.classList.remove("hidden");
+    }
+
+  }
+);
+
+
+function closeWarning(){
+
+  document
+    .getElementById("warning")
+    .classList.add("hidden");
+}
+
+
+/* =====================================================
+   EMPÊCHER LE RECHARGEMENT / FERMETURE
+===================================================== */
+
+window.addEventListener(
+  "beforeunload",
+  function(e){
+
+    if(
+      testStarted &&
+      !testFinished
+    ){
+
+      e.preventDefault();
+
+      e.returnValue = "";
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   EMPÊCHER RETOUR ARRIÈRE
+===================================================== */
+
+window.addEventListener(
+  "popstate",
+  function(){
+
+    if(
+      testStarted &&
+      !testFinished
+    ){
+
+      history.pushState(
+        {test:true},
+        "",
+        location.href
+      );
+
+      alert(
+        "Le retour en arrière est désactivé pendant le test."
+      );
+    }
+
+  }
+);
+
+
+/* =====================================================
+   INITIALISATION
+===================================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    const startButton =
+      document.getElementById("startBtn");
+
+    const nameInput =
+      document.getElementById("name");
+
+    const closeModalButton =
+      document.getElementById("closeModalBtn");
+
+    const closeWarningButton =
+      document.getElementById("closeWarningBtn");
+
+
+    /* Bouton COMMENCER */
+
+    startButton.addEventListener(
+      "click",
+      startTest
+    );
+
+
+    /* Entrée clavier */
+
+    nameInput.addEventListener(
+      "keydown",
+      function(event){
+
+        if(event.key === "Enter"){
+
+          event.preventDefault();
+
+          startTest();
+        }
+
+      }
+    );
+
+
+    /* Fermer texte */
+
+    closeModalButton.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    /* Fermer avertissement */
+
+    closeWarningButton.addEventListener(
+      "click",
+      closeWarning
+    );
+
+
+    /* Historique initial */
+
+    history.pushState(
+      {home:true},
+      "",
+      location.href
+    );
+
+
+    /* Vérification */
+
+    console.log(
+      "TEST BLANC EXCELLENTIA chargé."
+    );
+
+    console.log(
+      "Nombre de questions :",
+      Q.length
+    );
+
+    if(Q.length !== 100){
+
+      console.error(
+        "ERREUR : le test doit contenir 100 questions."
+      );
+
+    }else{
+
+      console.log(
+        "✓ 100 questions correctement chargées."
+      );
+    }
+
+  }
+);
+
+</script>
+
+</body>
+  </html>
